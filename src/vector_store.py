@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 import json
+import os
+import shutil
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -237,7 +240,17 @@ class VectorStore:
         metadata_file.parent.mkdir(parents=True, exist_ok=True)
         if int(self.index.ntotal) != len(self.metadata):
             raise RuntimeError("FAISS count and metadata count do not match")
-        faiss.write_index(self.index, str(index_file))
+        # FAISS's Windows file writer does not reliably handle non-ASCII
+        # absolute paths.  The project directory may contain Vietnamese
+        # characters, so write through an ASCII temporary path and move the
+        # finished file with Python's Unicode-aware filesystem APIs.
+        temporary_fd, temporary_name = tempfile.mkstemp(suffix=".faiss")
+        try:
+            os.close(temporary_fd)
+            faiss.write_index(self.index, temporary_name)
+            shutil.copyfile(temporary_name, index_file)
+        finally:
+            Path(temporary_name).unlink(missing_ok=True)
         serializable = {
             str(vector_id): {
                 "photo_path": item["photo_path"],
@@ -265,7 +278,13 @@ class VectorStore:
             raise FileNotFoundError(f"FAISS index does not exist: {index_path}")
         if not metadata_file.is_file():
             raise FileNotFoundError(f"Metadata file does not exist: {metadata_path}")
-        loaded_index = faiss.read_index(str(index_file))
+        temporary_fd, temporary_name = tempfile.mkstemp(suffix=".faiss")
+        try:
+            os.close(temporary_fd)
+            shutil.copyfile(index_file, temporary_name)
+            loaded_index = faiss.read_index(temporary_name)
+        finally:
+            Path(temporary_name).unlink(missing_ok=True)
         if int(loaded_index.d) != self.dimension:
             raise ValueError(
                 f"Index dimension {loaded_index.d} does not match store dimension {self.dimension}"

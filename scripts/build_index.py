@@ -9,6 +9,7 @@ import time
 from pathlib import Path
 
 import cv2
+import numpy as np
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -22,7 +23,13 @@ def load_image(path):
     """
     Đọc ảnh từ disk.
     """
-    image = cv2.imread(str(path), cv2.IMREAD_COLOR)
+    # cv2.imread does not reliably open Windows paths containing non-ASCII
+    # characters. Read the bytes first, then decode the image in memory.
+    try:
+        encoded = np.fromfile(str(path), dtype=np.uint8)
+    except OSError as exc:
+        raise ValueError(f"Unable to read image: {path}") from exc
+    image = cv2.imdecode(encoded, cv2.IMREAD_COLOR) if encoded.size else None
     if image is None or image.size == 0:
         raise ValueError(f"Unable to read image: {path}")
     return image
