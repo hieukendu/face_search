@@ -208,6 +208,13 @@ tempCodeRunnerFile.py
 # Ruff stuff:
 .ruff_cache/
 
+# Local face-search models, datasets, indexes, and generated tuning artifacts
+data/validation/*
+data/event_photos/*
+data/queries/*
+models/*.onnx
+storage/*
+
 # PyPI configuration file
 .pypirc
 

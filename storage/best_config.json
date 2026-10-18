@@ -1,0 +1,10 @@
+{
+  "det_size": 640,
+  "det_threshold": 0.3,
+  "min_face_size": 0,
+  "similarity_threshold": 0.23,
+  "embedding_dim": 512,
+  "top_k": 100,
+  "detector_model": "scrfd_10g.onnx",
+  "embedding_model": "arcface_w600k_r50.onnx"
+}

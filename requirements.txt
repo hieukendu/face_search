@@ -1,0 +1,16 @@
+numpy
+opencv-python-headless
+onnxruntime
+faiss-cpu
+huggingface_hub
+datasets
+python-dotenv
+tqdm
+pandas
+scikit-learn
+fastapi
+uvicorn
+python-multipart
+jinja2
+requests
+Pillow
