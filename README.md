@@ -1,11 +1,11 @@
 # Face Search — Amazing race 2026
 
-Ứng dụng chạy local để lưu ảnh sự kiện và tìm những tấm ảnh có bạn bằng một ảnh selfie. Giao diện hiển thị album **Amazing race 2026**, khu vực tải ảnh sự kiện, khu vực tìm ảnh và 24 ảnh mới tải lên gần nhất.
+Ứng dụng chạy local để nhập toàn bộ ảnh sự kiện từ một thư mục Google Drive cố định và tìm những tấm ảnh có bạn bằng một ảnh selfie. Giao diện **Amazing race 2026** có phần nhập Drive, tìm kiếm, tải từng ảnh gốc và tải tất cả kết quả thành ZIP; album hiển thị 24 ảnh mới nhất.
 
 Pipeline của dự án:
 
 ```text
-Ảnh sự kiện → SCRFD phát hiện khuôn mặt → căn chỉnh → ArcFace tạo embedding
+Google Drive → ảnh sự kiện → SCRFD phát hiện khuôn mặt → căn chỉnh → ArcFace tạo embedding
             → FAISS lưu vector + metadata
 
 Ảnh selfie  → phát hiện và căn chỉnh khuôn mặt → ArcFace → tìm trong FAISS
@@ -17,7 +17,7 @@ Pipeline của dự án:
 ## 1. Chuẩn bị
 
 - Cài Python **64-bit**. Môi trường Windows đã được kiểm tra với **Python 3.14.5**; ví dụ PowerShell bên dưới dùng Python 3.14.
-- Có kết nối Internet khi cài thư viện và tải model. Sau đó, xử lý và tìm ảnh diễn ra trên máy local.
+- Có kết nối Internet khi cài thư viện, tải model và nhập ảnh từ Drive. Sau khi nhập, tìm kiếm và tải bản ảnh đã lưu diễn ra trên máy local.
 - Tải hoặc clone source của dự án và mở terminal tại thư mục có `README.md`, `requirements.txt` và `app.py`.
 
 Ví dụ vào thư mục dự án trên Windows; thay đường dẫn cho đúng máy của bạn:
@@ -39,17 +39,17 @@ face_search/
 │   ├── scrfd_10g.onnx              # Bắt buộc tải
 │   └── arcface_w600k_r50.onnx      # Bắt buộc tải
 ├── data/
-│   ├── event_photos/              # Ảnh sự kiện được lưu khi upload
+│   ├── event_photos/              # Ảnh gốc được nhập từ Drive
 │   ├── queries/                   # Ảnh query cho CLI, nếu dùng
 ├── storage/
 │   ├── best_config.json           # Cấu hình có sẵn trong repository
-│   ├── faces.faiss                # Tự sinh sau khi upload/lập chỉ mục
+│   ├── faces.faiss                # Tự sinh sau khi nhập Drive/lập chỉ mục
 │   └── metadata.json              # Tự sinh cùng faces.faiss
 ├── src/
 └── scripts/
 ```
 
-Các model, ảnh upload và index phát sinh được bỏ qua bởi Git, nên người mới tải source cần tự tải model. Không cần tạo sẵn `faces.faiss` hoặc `metadata.json`; ứng dụng có thể bắt đầu với album và index rỗng.
+Các model, ảnh nhập từ Drive và index phát sinh được bỏ qua bởi Git, nên người mới tải source cần tự tải model. Không cần tạo sẵn `faces.faiss` hoặc `metadata.json`; ứng dụng có thể bắt đầu với album và index rỗng.
 
 ## 2. Tạo môi trường và cài thư viện
 
@@ -205,39 +205,44 @@ Giữ terminal này mở. Khi thấy `Uvicorn running on http://127.0.0.1:8000`,
 - [Kiểm tra server — `/health`](http://127.0.0.1:8000/health), kết quả mong đợi: `{"status":"ok"}`.
 - [Tài liệu API — `/docs`](http://127.0.0.1:8000/docs).
 
-`/health` xác nhận server đang hoạt động; hãy dùng bước kiểm tra model ở trên để xác nhận việc nạp model. Lần upload hoặc tìm kiếm đầu tiên sẽ khởi tạo model, nên có thể cần chờ thêm.
+`/health` xác nhận server đang hoạt động; hãy dùng bước kiểm tra model ở trên để xác nhận việc nạp model. Lần nhập Drive hoặc tìm kiếm đầu tiên sẽ khởi tạo model, nên có thể cần chờ thêm.
 
 Album trống ở lần chạy đầu là bình thường. Chưa có ảnh sự kiện thì chưa có ảnh để tìm kiếm.
 
-### Tải ảnh sự kiện
+### Nhập toàn bộ ảnh từ Google Drive
 
-1. Ở **Tải ảnh sự kiện**, chọn một hoặc nhiều file JPG/JPEG/PNG.
-2. Nhấn **Tải ảnh lên** và chờ thông báo xử lý hoàn tất; không chỉ chờ file được chọn trong ô upload.
-3. Xem số ảnh thêm mới, số khuôn mặt nhận diện được và các lỗi nếu có. Nút tải bị khóa trong lúc xử lý.
+Nguồn duy nhất là thư mục [Database](https://drive.google.com/drive/folders/1Fw76RVGWqtaKqCVBnDi3TR3oFqOfHLd_). Link được cố định trong `src/drive_import.py`; giao diện và API không nhận link thay thế hay ảnh sự kiện từ máy người dùng. Ứng dụng dùng [gdown](https://github.com/wkentaro/gdown) để đọc thư mục chia sẻ, không cần API key Google. Thư mục và ảnh phải cho phép **Bất kỳ ai có đường liên kết → Người xem**, đồng thời cho phép tải xuống.
+
+1. Lưu ảnh JPG/JPEG/PNG vào thư mục Drive trên, có thể đặt trong các thư mục con.
+2. Ở **Nhập ảnh từ Drive**, nhấn **Nhập toàn bộ ảnh** và chờ xử lý hoàn tất.
+3. Xem số ảnh tìm thấy, số ảnh thêm mới, số khuôn mặt và lỗi của từng ảnh nếu có. Mỗi thời điểm chỉ chạy một đợt nhập.
 4. Gallery bên dưới tự cập nhật, hiển thị tối đa 24 ảnh mới nhất, xếp ảnh mới lên trước. Nhấn một ảnh để mở bản gốc.
 
-Ảnh được lưu tại `data/event_photos/` và các khuôn mặt được thêm vào FAISS ngay trong lần upload. Không cần chạy `build_index.py` sau mỗi lần dùng giao diện. Trên CPU, nhiều ảnh hoặc ảnh nhiều người có thể cần thời gian xử lý.
+Ảnh gốc được lưu tại `data/event_photos/`, giữ nguyên nội dung. Toàn bộ đợt nhập dùng encoder, FAISS và cấu hình cũ; index/metadata được lưu một lần sau đợt xử lý. Không cần chạy `build_index.py` sau khi dùng giao diện. Tệp không phải JPG/JPEG/PNG được bỏ qua; lỗi tải/đọc một ảnh được báo riêng và các ảnh khác vẫn tiếp tục. Các tệp tải tạm được tự xóa cả khi có lỗi.
 
-Thông báo ảnh đã có trong album có nghĩa là giữ lại ảnh cũ và tránh thêm bản sao. Ảnh không phát hiện được khuôn mặt vẫn có thể nằm trong album, nhưng không có embedding để tìm bằng selfie.
+Nhấn nhập lần nữa để lấy ảnh mới trên Drive. Nội dung ảnh đã có và đã lập chỉ mục được bỏ qua, tránh thêm bản sao vector. Ảnh không có khuôn mặt vẫn nằm trong album; lần nhập sau có thể được nhận diện lại vì chưa có embedding. Nhập Drive không xóa ảnh/index cũ khi một ảnh bị gỡ khỏi Drive.
 
 ### Tìm ảnh bằng selfie
 
 1. Ở **Tìm ảnh của bạn**, chọn một ảnh rõ mặt, đủ sáng, ưu tiên chụp chính diện.
 2. Nhấn **Tìm ảnh** và chờ xử lý.
 3. Kết quả xuất hiện trong khu vực **Ảnh có bạn**; nhấn một kết quả để mở ảnh gốc. Có thể đóng khu vực kết quả để tiếp tục xem album.
+4. Nhấn **Tải ảnh gốc** bên dưới từng kết quả, hoặc **Tải tất cả ảnh (.zip)** để nhận `anh-cua-ban.zip` chứa thư mục `anh-cua-ban/` với toàn bộ ảnh trả về, không giới hạn 100 ảnh.
 
 Selfie chỉ dùng làm truy vấn, **không được thêm vào album hoặc FAISS index**. Nếu selfie có nhiều khuôn mặt, hệ thống sử dụng khuôn mặt hợp lệ lớn nhất. Không tìm thấy khuôn mặt hoặc không có ảnh phù hợp sẽ có thông báo tương ứng.
+
+ZIP chứa bản ảnh gốc đã lưu, không phải ảnh thumbnail hay ảnh cắt mặt. Tệp ZIP tạm trên server được xóa khi phản hồi kết thúc. Nếu một ảnh đã bị xóa khỏi album, API báo lỗi thay vì âm thầm tải một ZIP thiếu ảnh.
 
 ### Dữ liệu được lưu ở đâu?
 
 | Nội dung | Nơi lưu | Khi khởi động lại |
 |---|---|---|
-| Ảnh gốc đã upload | `data/event_photos/` | Giữ nguyên trên ổ đĩa |
+| Ảnh gốc đã nhập từ Drive | `data/event_photos/` | Giữ nguyên trên ổ đĩa |
 | Các vector khuôn mặt | `storage/faces.faiss` | App tự nạp lại nếu có |
 | Đường dẫn ảnh và bounding box | `storage/metadata.json` | Phải đi cùng FAISS index |
 | Cấu hình detector/tìm kiếm | `storage/best_config.json` | App tự đọc |
 
-Khi chuyển dữ liệu sự kiện sang máy khác, cần giữ các ảnh và cặp `faces.faiss`/`metadata.json` đồng bộ. Nếu thay đổi đường dẫn ảnh hoặc hệ điều hành, nên lập lại index theo bước 5 để metadata dùng đường dẫn trên máy đích. Đóng trình duyệt hoặc tắt server không xóa ảnh đã upload.
+Khi chuyển dữ liệu sự kiện sang máy khác, cần giữ các ảnh và cặp `faces.faiss`/`metadata.json` đồng bộ. Nếu thay đổi đường dẫn ảnh hoặc hệ điều hành, nên lập lại index theo bước 5 để metadata dùng đường dẫn trên máy đích. Đóng trình duyệt hoặc tắt server không xóa ảnh đã nhập.
 
 ### Tắt server
 
@@ -257,7 +262,7 @@ Các ví dụ dưới đây dùng PowerShell và chạy tại thư mục gốc. 
 
 ### Lập lại index từ ảnh có sẵn
 
-Nếu tự chép ảnh vào `data/event_photos/` thay vì upload qua giao diện, chạy:
+Nếu cần khôi phục index từ ảnh đã lưu tại `data/event_photos/`, chạy:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/build_index.py --image-folder data/event_photos
@@ -303,11 +308,13 @@ Nếu cài lại `requirements.txt`, gói CPU sẽ được yêu cầu cài lạ
 
 | Phương thức | Đường dẫn | Công dụng |
 |---|---|---|
-| `GET` | `/` | Giao diện album, upload và tìm kiếm |
+| `GET` | `/` | Giao diện album, nhập Drive, tìm kiếm và tải ảnh |
 | `GET` | `/health` | Kiểm tra server hoạt động |
-| `POST` | `/events` | Upload nhiều ảnh; multipart field `files` |
+| `POST` | `/events` | Nhập toàn bộ ảnh từ thư mục Drive cố định; không cần body |
 | `POST` | `/search` | Tìm ảnh bằng một selfie; multipart field `file` |
 | `GET` | `/event-photos/<đường-dẫn-ảnh>` | Xem ảnh sự kiện đã lưu |
+| `GET` | `/downloads/photo/<đường-dẫn-trong-album>` | Tải một ảnh gốc dưới dạng attachment |
+| `POST` | `/downloads/zip` | Tải ZIP; JSON `{"photos": ["data/event_photos/..."]}` lấy từ `matches[].photo_path` |
 | `GET` | `/docs` | Tài liệu API tương tác của FastAPI |
 
 ## 8. Xử lý lỗi thường gặp
@@ -323,8 +330,28 @@ Nếu cài lại `requirements.txt`, gói CPU sẽ được yêu cầu cài lạ
 | HTTP 401/403 khi tải từ Hugging Face | Nếu dùng token, kiểm tra token còn hiệu lực và quyền đọc; với dataset gated, tài khoản phải được cấp quyền truy cập trước. Hai model công khai cũng có thể tải bằng liên kết trực tiếp. |
 | Không mở được trang local | Kiểm tra terminal Uvicorn còn chạy, URL và cổng đúng. Sau khi chỉ khởi động lại server, tải lại trang trình duyệt. |
 | Cổng 8000 đã được dùng | Dừng tiến trình server cũ, hoặc đổi `--port 8001` và mở `http://127.0.0.1:8001`. |
-| Album có ảnh nhưng tìm không ra | Chờ upload xử lý xong; kiểm tra ảnh có khuôn mặt rõ và cặp index/metadata còn đồng bộ. Nếu chép ảnh bằng tay, build index theo bước 5. |
+| Không đọc/tải được thư mục Drive | Kiểm tra link nguồn, Internet, quyền Người xem cho bất kỳ ai có link và quyền tải ảnh. |
+| Album có ảnh nhưng tìm không ra | Chờ nhập Drive xử lý xong; kiểm tra ảnh có khuôn mặt rõ và cặp index/metadata còn đồng bộ. Khi cần, khôi phục index theo bước 5. |
 | Không tìm thấy khuôn mặt trong selfie | Dùng ảnh đủ sáng, rõ mặt, ít che khuất; thử ảnh chụp chính diện. |
 | Không có ảnh phù hợp | Kiểm tra đã tải ảnh sự kiện có người cần tìm; thử selfie khác. |
 
 Phần cài đặt và hướng dẫn trên sử dụng các chức năng hiện có của dự án; không cần thay đổi encoder, vector store, search engine hoặc pipeline để chạy local.
+
+## 9. Kiểm thử
+
+```powershell
+python -m pip install -r requirements-dev.txt
+python -B -m unittest discover -s tests -v
+```
+
+Các kiểm thử nhập/tải dùng thư mục tạm tự dọn và FAISS thật, kiểm tra lỗi Drive, ảnh hỏng, chống trùng, đường dẫn tải, ZIP và luồng tìm/tải hơn 100 ảnh. Kiểm thử model thật chạy khi có hai model và đã nhập ảnh Drive (có ảnh và metadata); kiểm thử cũ với bộ 10 selfie riêng chỉ chạy khi có đủ bộ dữ liệu đó. Lệnh `unittest` trên không gọi Drive để tránh phụ thuộc mạng.
+
+Để kiểm tra đầy đủ nút nhập Drive trên UI bằng trình duyệt thật, sau khi tải hai model:
+
+```powershell
+python -B tests/ui_drive_smoke.py
+```
+
+Lệnh này chạy Uvicorn và trình duyệt, nhập toàn bộ ảnh từ Drive thật vào album/index tạm rỗng, tìm kiếm, tải ảnh gốc và ZIP rồi đối chiếu nội dung. Đồng thời kiểm tra server vẫn phản hồi và từ chối đợt nhập thứ hai trong lúc đang xử lý. Không dùng ảnh tải sẵn hay giả lập phản hồi Drive. Album/index đang sử dụng được giữ nguyên; dữ liệu và server kiểm thử được tự dọn khi kết thúc.
+
+Trên Windows, kiểm thử dùng Edge đã cài trên máy. Với Linux/macOS, cài trình duyệt kiểm thử bằng `python -m playwright install chromium` trước khi chạy. Kiểm thử này cần Internet và có thể mất vài phút tùy số ảnh/kết nối; thời gian chờ nhập mặc định là 600 giây, có thể đổi bằng `--timeout`.

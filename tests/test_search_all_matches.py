@@ -88,8 +88,9 @@ class SearchAllMatchesTest(unittest.TestCase):
     @unittest.skipUnless(
         (PROJECT_ROOT / "models" / "scrfd_10g.onnx").is_file()
         and (PROJECT_ROOT / "models" / "arcface_w600k_r50.onnx").is_file()
-        and (PROJECT_ROOT / "storage" / "faces.faiss").is_file(),
-        "production models/index are not available",
+        and (PROJECT_ROOT / "storage" / "faces.faiss").is_file()
+        and len(list((PROJECT_ROOT / "data" / "queries" / "smoke_queries").glob("*.jpg"))) == 10,
+        "production models/index or the original 10-query fixture are not available",
     )
     def test_existing_smoke_queries_still_search_without_top_k_truncation(self):
         config = json.loads((PROJECT_ROOT / "storage" / "best_config.json").read_text())

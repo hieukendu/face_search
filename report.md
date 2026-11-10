@@ -79,7 +79,11 @@ Production search now uses FAISS `IndexFlatIP.range_search` at the final similar
 }
 ```
 
-The retrieve-all validation rerun does not alter `storage/best_config.json`; the similarity threshold remains 0.23. Detector tuning was not rerun, and the corrected VGGFace2 embedding cache was reused.
+The offline VGGFace2 threshold sweep selects 0.23 for maximum recall at the stated precision floor. This threshold remains the deployed runtime value; the supplied ID-photo diagnostic showed that it returns 18 photo paths, with scores from 0.575 down to 0.238. SCRFD, ArcFace, FAISS, and the detector tuning remain unchanged.
+
+## Independent Hugging Face check
+
+An independent external check used 600 labeled LFW verification pairs sampled from the Hugging Face `marcelohaps/lfw` package: 300 same-identity and 300 different-identity pairs, with 1,141 unique images and 599 valid scored pairs after one no-face image. The unchanged production threshold `0.23` produced precision `1.0000`, recall `0.9933`, F1 `0.9966`, balanced accuracy `0.9967`, and ROC-AUC `0.9970` on this sample. The complete method, score distributions, threshold sweep, Drive transport check, and cleanup evidence are in [`codex/hf-lfw-evaluation-20261110.md`](codex/hf-lfw-evaluation-20261110.md) and [`codex/hf-lfw-eval-20261110.json`](codex/hf-lfw-eval-20261110.json).
 
 ## Event index and smoke validation
 

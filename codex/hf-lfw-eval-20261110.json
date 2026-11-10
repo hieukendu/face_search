@@ -1,0 +1,6085 @@
+{
+  "dataset": "marcelohaps/lfw",
+  "sample": {
+    "pairs_requested": 600,
+    "positive_pairs_requested": 300,
+    "negative_pairs_requested": 300,
+    "unique_images": 1141,
+    "valid_images": 1140,
+    "failed_images": 1,
+    "valid_pairs": 599,
+    "skipped_pairs": 1
+  },
+  "production_config": {
+    "det_size": 640,
+    "det_threshold": 0.3,
+    "min_face_size": 0,
+    "similarity_threshold": 0.23,
+    "detector_model": "scrfd_10g.onnx",
+    "embedding_model": "arcface_w600k_r50.onnx"
+  },
+  "current_threshold_metrics": {
+    "threshold": 0.23,
+    "tp": 297,
+    "tn": 300,
+    "fp": 0,
+    "fn": 2,
+    "precision": 1.0,
+    "recall": 0.9933110367892977,
+    "specificity": 1.0,
+    "fpr": 0.0,
+    "fnr": 0.006688963210702337,
+    "accuracy": 0.996661101836394,
+    "balanced_accuracy": 0.9966555183946488,
+    "f1": 0.9966442953020134
+  },
+  "best_f1_threshold_metrics": {
+    "threshold": 0.18,
+    "tp": 297,
+    "tn": 300,
+    "fp": 0,
+    "fn": 2,
+    "precision": 1.0,
+    "recall": 0.9933110367892977,
+    "specificity": 1.0,
+    "fpr": 0.0,
+    "fnr": 0.006688963210702337,
+    "accuracy": 0.996661101836394,
+    "balanced_accuracy": 0.9966555183946488,
+    "f1": 0.9966442953020134
+  },
+  "roc_auc": 0.9969788182831661,
+  "positive_score_quantiles": {
+    "min": -0.048482,
+    "p05": 0.480324,
+    "p25": 0.609943,
+    "median": 0.676938,
+    "p75": 0.745895,
+    "p95": 0.826087,
+    "max": 0.949311
+  },
+  "negative_score_quantiles": {
+    "min": -0.1682,
+    "p05": -0.094675,
+    "p25": -0.04202,
+    "median": 0.000779,
+    "p75": 0.038005,
+    "p95": 0.091438,
+    "max": 0.1721
+  },
+  "threshold_sweep": [
+    {
+      "threshold": 0.1,
+      "tp": 297,
+      "tn": 288,
+      "fp": 12,
+      "fn": 2,
+      "precision": 0.9611650485436893,
+      "recall": 0.9933110367892977,
+      "specificity": 0.96,
+      "fpr": 0.040000000000000036,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.9766277128547579,
+      "balanced_accuracy": 0.9766555183946488,
+      "f1": 0.9769736842105263
+    },
+    {
+      "threshold": 0.11,
+      "tp": 297,
+      "tn": 291,
+      "fp": 9,
+      "fn": 2,
+      "precision": 0.9705882352941176,
+      "recall": 0.9933110367892977,
+      "specificity": 0.97,
+      "fpr": 0.030000000000000027,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.9816360601001669,
+      "balanced_accuracy": 0.9816555183946488,
+      "f1": 0.9818181818181817
+    },
+    {
+      "threshold": 0.12,
+      "tp": 297,
+      "tn": 294,
+      "fp": 6,
+      "fn": 2,
+      "precision": 0.9801980198019802,
+      "recall": 0.9933110367892977,
+      "specificity": 0.98,
+      "fpr": 0.020000000000000018,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.986644407345576,
+      "balanced_accuracy": 0.9866555183946488,
+      "f1": 0.9867109634551495
+    },
+    {
+      "threshold": 0.13,
+      "tp": 297,
+      "tn": 295,
+      "fp": 5,
+      "fn": 2,
+      "precision": 0.9834437086092715,
+      "recall": 0.9933110367892977,
+      "specificity": 0.9833333333333333,
+      "fpr": 0.01666666666666672,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.988313856427379,
+      "balanced_accuracy": 0.9883221850613155,
+      "f1": 0.9883527454242929
+    },
+    {
+      "threshold": 0.14,
+      "tp": 297,
+      "tn": 297,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.99,
+      "recall": 0.9933110367892977,
+      "specificity": 0.99,
+      "fpr": 0.010000000000000009,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.991652754590985,
+      "balanced_accuracy": 0.9916555183946488,
+      "f1": 0.9916527545909849
+    },
+    {
+      "threshold": 0.15,
+      "tp": 297,
+      "tn": 297,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.99,
+      "recall": 0.9933110367892977,
+      "specificity": 0.99,
+      "fpr": 0.010000000000000009,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.991652754590985,
+      "balanced_accuracy": 0.9916555183946488,
+      "f1": 0.9916527545909849
+    },
+    {
+      "threshold": 0.16,
+      "tp": 297,
+      "tn": 299,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.9966442953020134,
+      "recall": 0.9933110367892977,
+      "specificity": 0.9966666666666667,
+      "fpr": 0.0033333333333332993,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949888517279821,
+      "f1": 0.9949748743718593
+    },
+    {
+      "threshold": 0.17,
+      "tp": 297,
+      "tn": 299,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.9966442953020134,
+      "recall": 0.9933110367892977,
+      "specificity": 0.9966666666666667,
+      "fpr": 0.0033333333333332993,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949888517279821,
+      "f1": 0.9949748743718593
+    },
+    {
+      "threshold": 0.18,
+      "tp": 297,
+      "tn": 300,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.9933110367892977,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.996661101836394,
+      "balanced_accuracy": 0.9966555183946488,
+      "f1": 0.9966442953020134
+    },
+    {
+      "threshold": 0.19,
+      "tp": 297,
+      "tn": 300,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.9933110367892977,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.996661101836394,
+      "balanced_accuracy": 0.9966555183946488,
+      "f1": 0.9966442953020134
+    },
+    {
+      "threshold": 0.2,
+      "tp": 297,
+      "tn": 300,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.9933110367892977,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.996661101836394,
+      "balanced_accuracy": 0.9966555183946488,
+      "f1": 0.9966442953020134
+    },
+    {
+      "threshold": 0.21,
+      "tp": 297,
+      "tn": 300,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.9933110367892977,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.996661101836394,
+      "balanced_accuracy": 0.9966555183946488,
+      "f1": 0.9966442953020134
+    },
+    {
+      "threshold": 0.22,
+      "tp": 297,
+      "tn": 300,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.9933110367892977,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.996661101836394,
+      "balanced_accuracy": 0.9966555183946488,
+      "f1": 0.9966442953020134
+    },
+    {
+      "threshold": 0.23,
+      "tp": 297,
+      "tn": 300,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.9933110367892977,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.996661101836394,
+      "balanced_accuracy": 0.9966555183946488,
+      "f1": 0.9966442953020134
+    },
+    {
+      "threshold": 0.24,
+      "tp": 297,
+      "tn": 300,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.9933110367892977,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.006688963210702337,
+      "accuracy": 0.996661101836394,
+      "balanced_accuracy": 0.9966555183946488,
+      "f1": 0.9966442953020134
+    },
+    {
+      "threshold": 0.25,
+      "tp": 296,
+      "tn": 300,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.9899665551839465,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.010033444816053505,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949832775919732,
+      "f1": 0.9949579831932773
+    },
+    {
+      "threshold": 0.26,
+      "tp": 296,
+      "tn": 300,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.9899665551839465,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.010033444816053505,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949832775919732,
+      "f1": 0.9949579831932773
+    },
+    {
+      "threshold": 0.27,
+      "tp": 296,
+      "tn": 300,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.9899665551839465,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.010033444816053505,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949832775919732,
+      "f1": 0.9949579831932773
+    },
+    {
+      "threshold": 0.28,
+      "tp": 296,
+      "tn": 300,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.9899665551839465,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.010033444816053505,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949832775919732,
+      "f1": 0.9949579831932773
+    },
+    {
+      "threshold": 0.29,
+      "tp": 296,
+      "tn": 300,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.9899665551839465,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.010033444816053505,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949832775919732,
+      "f1": 0.9949579831932773
+    },
+    {
+      "threshold": 0.3,
+      "tp": 296,
+      "tn": 300,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.9899665551839465,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.010033444816053505,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949832775919732,
+      "f1": 0.9949579831932773
+    },
+    {
+      "threshold": 0.31,
+      "tp": 296,
+      "tn": 300,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.9899665551839465,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.010033444816053505,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949832775919732,
+      "f1": 0.9949579831932773
+    },
+    {
+      "threshold": 0.32,
+      "tp": 296,
+      "tn": 300,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.9899665551839465,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.010033444816053505,
+      "accuracy": 0.994991652754591,
+      "balanced_accuracy": 0.9949832775919732,
+      "f1": 0.9949579831932773
+    },
+    {
+      "threshold": 0.33,
+      "tp": 295,
+      "tn": 300,
+      "fp": 0,
+      "fn": 4,
+      "precision": 1.0,
+      "recall": 0.9866220735785953,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.013377926421404673,
+      "accuracy": 0.993322203672788,
+      "balanced_accuracy": 0.9933110367892977,
+      "f1": 0.9932659932659933
+    },
+    {
+      "threshold": 0.34,
+      "tp": 295,
+      "tn": 300,
+      "fp": 0,
+      "fn": 4,
+      "precision": 1.0,
+      "recall": 0.9866220735785953,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.013377926421404673,
+      "accuracy": 0.993322203672788,
+      "balanced_accuracy": 0.9933110367892977,
+      "f1": 0.9932659932659933
+    },
+    {
+      "threshold": 0.35,
+      "tp": 295,
+      "tn": 300,
+      "fp": 0,
+      "fn": 4,
+      "precision": 1.0,
+      "recall": 0.9866220735785953,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.013377926421404673,
+      "accuracy": 0.993322203672788,
+      "balanced_accuracy": 0.9933110367892977,
+      "f1": 0.9932659932659933
+    },
+    {
+      "threshold": 0.36,
+      "tp": 295,
+      "tn": 300,
+      "fp": 0,
+      "fn": 4,
+      "precision": 1.0,
+      "recall": 0.9866220735785953,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.013377926421404673,
+      "accuracy": 0.993322203672788,
+      "balanced_accuracy": 0.9933110367892977,
+      "f1": 0.9932659932659933
+    },
+    {
+      "threshold": 0.37,
+      "tp": 295,
+      "tn": 300,
+      "fp": 0,
+      "fn": 4,
+      "precision": 1.0,
+      "recall": 0.9866220735785953,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.013377926421404673,
+      "accuracy": 0.993322203672788,
+      "balanced_accuracy": 0.9933110367892977,
+      "f1": 0.9932659932659933
+    },
+    {
+      "threshold": 0.38,
+      "tp": 295,
+      "tn": 300,
+      "fp": 0,
+      "fn": 4,
+      "precision": 1.0,
+      "recall": 0.9866220735785953,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.013377926421404673,
+      "accuracy": 0.993322203672788,
+      "balanced_accuracy": 0.9933110367892977,
+      "f1": 0.9932659932659933
+    },
+    {
+      "threshold": 0.39,
+      "tp": 294,
+      "tn": 300,
+      "fp": 0,
+      "fn": 5,
+      "precision": 1.0,
+      "recall": 0.9832775919732442,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.01672240802675584,
+      "accuracy": 0.991652754590985,
+      "balanced_accuracy": 0.9916387959866221,
+      "f1": 0.9915682967959528
+    },
+    {
+      "threshold": 0.4,
+      "tp": 294,
+      "tn": 300,
+      "fp": 0,
+      "fn": 5,
+      "precision": 1.0,
+      "recall": 0.9832775919732442,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.01672240802675584,
+      "accuracy": 0.991652754590985,
+      "balanced_accuracy": 0.9916387959866221,
+      "f1": 0.9915682967959528
+    },
+    {
+      "threshold": 0.41,
+      "tp": 293,
+      "tn": 300,
+      "fp": 0,
+      "fn": 6,
+      "precision": 1.0,
+      "recall": 0.979933110367893,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.02006688963210701,
+      "accuracy": 0.989983305509182,
+      "balanced_accuracy": 0.9899665551839465,
+      "f1": 0.9898648648648649
+    },
+    {
+      "threshold": 0.42,
+      "tp": 293,
+      "tn": 300,
+      "fp": 0,
+      "fn": 6,
+      "precision": 1.0,
+      "recall": 0.979933110367893,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.02006688963210701,
+      "accuracy": 0.989983305509182,
+      "balanced_accuracy": 0.9899665551839465,
+      "f1": 0.9898648648648649
+    },
+    {
+      "threshold": 0.43,
+      "tp": 291,
+      "tn": 300,
+      "fp": 0,
+      "fn": 8,
+      "precision": 1.0,
+      "recall": 0.9732441471571907,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.026755852842809347,
+      "accuracy": 0.986644407345576,
+      "balanced_accuracy": 0.9866220735785953,
+      "f1": 0.9864406779661017
+    },
+    {
+      "threshold": 0.44,
+      "tp": 291,
+      "tn": 300,
+      "fp": 0,
+      "fn": 8,
+      "precision": 1.0,
+      "recall": 0.9732441471571907,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.026755852842809347,
+      "accuracy": 0.986644407345576,
+      "balanced_accuracy": 0.9866220735785953,
+      "f1": 0.9864406779661017
+    },
+    {
+      "threshold": 0.45,
+      "tp": 290,
+      "tn": 300,
+      "fp": 0,
+      "fn": 9,
+      "precision": 1.0,
+      "recall": 0.9698996655518395,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.030100334448160515,
+      "accuracy": 0.9849749582637729,
+      "balanced_accuracy": 0.9849498327759197,
+      "f1": 0.9847198641765704
+    },
+    {
+      "threshold": 0.46,
+      "tp": 288,
+      "tn": 300,
+      "fp": 0,
+      "fn": 11,
+      "precision": 1.0,
+      "recall": 0.9632107023411371,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.03678929765886285,
+      "accuracy": 0.9816360601001669,
+      "balanced_accuracy": 0.9816053511705686,
+      "f1": 0.9812606473594548
+    },
+    {
+      "threshold": 0.47,
+      "tp": 285,
+      "tn": 300,
+      "fp": 0,
+      "fn": 14,
+      "precision": 1.0,
+      "recall": 0.9531772575250836,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.04682274247491636,
+      "accuracy": 0.9766277128547579,
+      "balanced_accuracy": 0.9765886287625418,
+      "f1": 0.976027397260274
+    },
+    {
+      "threshold": 0.48,
+      "tp": 284,
+      "tn": 300,
+      "fp": 0,
+      "fn": 15,
+      "precision": 1.0,
+      "recall": 0.9498327759197325,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.050167224080267525,
+      "accuracy": 0.9749582637729549,
+      "balanced_accuracy": 0.9749163879598662,
+      "f1": 0.9742710120068611
+    },
+    {
+      "threshold": 0.49,
+      "tp": 283,
+      "tn": 300,
+      "fp": 0,
+      "fn": 16,
+      "precision": 1.0,
+      "recall": 0.9464882943143813,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.05351170568561869,
+      "accuracy": 0.9732888146911519,
+      "balanced_accuracy": 0.9732441471571907,
+      "f1": 0.9725085910652921
+    },
+    {
+      "threshold": 0.5,
+      "tp": 281,
+      "tn": 300,
+      "fp": 0,
+      "fn": 18,
+      "precision": 1.0,
+      "recall": 0.939799331103679,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.06020066889632103,
+      "accuracy": 0.9699499165275459,
+      "balanced_accuracy": 0.9698996655518395,
+      "f1": 0.9689655172413794
+    },
+    {
+      "threshold": 0.51,
+      "tp": 277,
+      "tn": 300,
+      "fp": 0,
+      "fn": 22,
+      "precision": 1.0,
+      "recall": 0.9264214046822743,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.0735785953177257,
+      "accuracy": 0.9632721202003339,
+      "balanced_accuracy": 0.9632107023411371,
+      "f1": 0.9618055555555556
+    },
+    {
+      "threshold": 0.52,
+      "tp": 274,
+      "tn": 300,
+      "fp": 0,
+      "fn": 25,
+      "precision": 1.0,
+      "recall": 0.9163879598662207,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.08361204013377932,
+      "accuracy": 0.9582637729549248,
+      "balanced_accuracy": 0.9581939799331103,
+      "f1": 0.956369982547993
+    },
+    {
+      "threshold": 0.53,
+      "tp": 270,
+      "tn": 300,
+      "fp": 0,
+      "fn": 29,
+      "precision": 1.0,
+      "recall": 0.903010033444816,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.09698996655518399,
+      "accuracy": 0.9515859766277128,
+      "balanced_accuracy": 0.951505016722408,
+      "f1": 0.9490333919156415
+    },
+    {
+      "threshold": 0.54,
+      "tp": 269,
+      "tn": 300,
+      "fp": 0,
+      "fn": 30,
+      "precision": 1.0,
+      "recall": 0.8996655518394648,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.10033444816053516,
+      "accuracy": 0.9499165275459098,
+      "balanced_accuracy": 0.9498327759197325,
+      "f1": 0.9471830985915493
+    },
+    {
+      "threshold": 0.55,
+      "tp": 266,
+      "tn": 300,
+      "fp": 0,
+      "fn": 33,
+      "precision": 1.0,
+      "recall": 0.8896321070234113,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.11036789297658867,
+      "accuracy": 0.9449081803005008,
+      "balanced_accuracy": 0.9448160535117056,
+      "f1": 0.9415929203539823
+    },
+    {
+      "threshold": 0.56,
+      "tp": 260,
+      "tn": 300,
+      "fp": 0,
+      "fn": 39,
+      "precision": 1.0,
+      "recall": 0.8695652173913043,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.13043478260869568,
+      "accuracy": 0.9348914858096828,
+      "balanced_accuracy": 0.9347826086956521,
+      "f1": 0.9302325581395349
+    },
+    {
+      "threshold": 0.57,
+      "tp": 253,
+      "tn": 300,
+      "fp": 0,
+      "fn": 46,
+      "precision": 1.0,
+      "recall": 0.8461538461538461,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.15384615384615385,
+      "accuracy": 0.9232053422370617,
+      "balanced_accuracy": 0.9230769230769231,
+      "f1": 0.9166666666666666
+    },
+    {
+      "threshold": 0.58,
+      "tp": 246,
+      "tn": 300,
+      "fp": 0,
+      "fn": 53,
+      "precision": 1.0,
+      "recall": 0.822742474916388,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.17725752508361203,
+      "accuracy": 0.9115191986644408,
+      "balanced_accuracy": 0.9113712374581939,
+      "f1": 0.9027522935779817
+    },
+    {
+      "threshold": 0.59,
+      "tp": 238,
+      "tn": 300,
+      "fp": 0,
+      "fn": 61,
+      "precision": 1.0,
+      "recall": 0.7959866220735786,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.20401337792642138,
+      "accuracy": 0.8981636060100167,
+      "balanced_accuracy": 0.8979933110367893,
+      "f1": 0.8864059590316574
+    },
+    {
+      "threshold": 0.6,
+      "tp": 233,
+      "tn": 300,
+      "fp": 0,
+      "fn": 66,
+      "precision": 1.0,
+      "recall": 0.7792642140468228,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.22073578595317722,
+      "accuracy": 0.8898163606010017,
+      "balanced_accuracy": 0.8896321070234114,
+      "f1": 0.8759398496240601
+    },
+    {
+      "threshold": 0.61,
+      "tp": 224,
+      "tn": 300,
+      "fp": 0,
+      "fn": 75,
+      "precision": 1.0,
+      "recall": 0.7491638795986622,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.25083612040133785,
+      "accuracy": 0.8747913188647746,
+      "balanced_accuracy": 0.8745819397993311,
+      "f1": 0.8565965583173996
+    },
+    {
+      "threshold": 0.62,
+      "tp": 218,
+      "tn": 300,
+      "fp": 0,
+      "fn": 81,
+      "precision": 1.0,
+      "recall": 0.7290969899665551,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.27090301003344486,
+      "accuracy": 0.8647746243739566,
+      "balanced_accuracy": 0.8645484949832776,
+      "f1": 0.8433268858800773
+    },
+    {
+      "threshold": 0.63,
+      "tp": 208,
+      "tn": 300,
+      "fp": 0,
+      "fn": 91,
+      "precision": 1.0,
+      "recall": 0.6956521739130435,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.30434782608695654,
+      "accuracy": 0.8480801335559266,
+      "balanced_accuracy": 0.8478260869565217,
+      "f1": 0.8205128205128205
+    },
+    {
+      "threshold": 0.64,
+      "tp": 198,
+      "tn": 300,
+      "fp": 0,
+      "fn": 101,
+      "precision": 1.0,
+      "recall": 0.6622073578595318,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.3377926421404682,
+      "accuracy": 0.8313856427378965,
+      "balanced_accuracy": 0.8311036789297659,
+      "f1": 0.7967806841046278
+    },
+    {
+      "threshold": 0.65,
+      "tp": 187,
+      "tn": 300,
+      "fp": 0,
+      "fn": 112,
+      "precision": 1.0,
+      "recall": 0.6254180602006689,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.3745819397993311,
+      "accuracy": 0.8130217028380634,
+      "balanced_accuracy": 0.8127090301003345,
+      "f1": 0.7695473251028807
+    },
+    {
+      "threshold": 0.66,
+      "tp": 172,
+      "tn": 300,
+      "fp": 0,
+      "fn": 127,
+      "precision": 1.0,
+      "recall": 0.5752508361204013,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.4247491638795987,
+      "accuracy": 0.7879799666110183,
+      "balanced_accuracy": 0.7876254180602007,
+      "f1": 0.7303609341825902
+    },
+    {
+      "threshold": 0.67,
+      "tp": 155,
+      "tn": 300,
+      "fp": 0,
+      "fn": 144,
+      "precision": 1.0,
+      "recall": 0.5183946488294314,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.4816053511705686,
+      "accuracy": 0.7595993322203672,
+      "balanced_accuracy": 0.7591973244147157,
+      "f1": 0.682819383259912
+    },
+    {
+      "threshold": 0.68,
+      "tp": 144,
+      "tn": 300,
+      "fp": 0,
+      "fn": 155,
+      "precision": 1.0,
+      "recall": 0.4816053511705686,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.5183946488294314,
+      "accuracy": 0.7412353923205343,
+      "balanced_accuracy": 0.7408026755852843,
+      "f1": 0.6501128668171557
+    },
+    {
+      "threshold": 0.69,
+      "tp": 135,
+      "tn": 300,
+      "fp": 0,
+      "fn": 164,
+      "precision": 1.0,
+      "recall": 0.451505016722408,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.548494983277592,
+      "accuracy": 0.7262103505843072,
+      "balanced_accuracy": 0.725752508361204,
+      "f1": 0.6221198156682027
+    },
+    {
+      "threshold": 0.7,
+      "tp": 123,
+      "tn": 300,
+      "fp": 0,
+      "fn": 176,
+      "precision": 1.0,
+      "recall": 0.411371237458194,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.5886287625418061,
+      "accuracy": 0.7061769616026711,
+      "balanced_accuracy": 0.705685618729097,
+      "f1": 0.5829383886255924
+    },
+    {
+      "threshold": 0.71,
+      "tp": 112,
+      "tn": 300,
+      "fp": 0,
+      "fn": 187,
+      "precision": 1.0,
+      "recall": 0.3745819397993311,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.6254180602006689,
+      "accuracy": 0.6878130217028381,
+      "balanced_accuracy": 0.6872909698996655,
+      "f1": 0.5450121654501217
+    },
+    {
+      "threshold": 0.72,
+      "tp": 106,
+      "tn": 300,
+      "fp": 0,
+      "fn": 193,
+      "precision": 1.0,
+      "recall": 0.35451505016722407,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.6454849498327759,
+      "accuracy": 0.67779632721202,
+      "balanced_accuracy": 0.677257525083612,
+      "f1": 0.5234567901234568
+    },
+    {
+      "threshold": 0.73,
+      "tp": 93,
+      "tn": 300,
+      "fp": 0,
+      "fn": 206,
+      "precision": 1.0,
+      "recall": 0.3110367892976589,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.6889632107023411,
+      "accuracy": 0.656093489148581,
+      "balanced_accuracy": 0.6555183946488294,
+      "f1": 0.4744897959183674
+    },
+    {
+      "threshold": 0.74,
+      "tp": 79,
+      "tn": 300,
+      "fp": 0,
+      "fn": 220,
+      "precision": 1.0,
+      "recall": 0.26421404682274247,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.7357859531772575,
+      "accuracy": 0.6327212020033389,
+      "balanced_accuracy": 0.6321070234113713,
+      "f1": 0.41798941798941797
+    },
+    {
+      "threshold": 0.75,
+      "tp": 70,
+      "tn": 300,
+      "fp": 0,
+      "fn": 229,
+      "precision": 1.0,
+      "recall": 0.23411371237458195,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.765886287625418,
+      "accuracy": 0.6176961602671118,
+      "balanced_accuracy": 0.617056856187291,
+      "f1": 0.3794037940379404
+    },
+    {
+      "threshold": 0.76,
+      "tp": 58,
+      "tn": 300,
+      "fp": 0,
+      "fn": 241,
+      "precision": 1.0,
+      "recall": 0.1939799331103679,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.8060200668896321,
+      "accuracy": 0.5976627712854758,
+      "balanced_accuracy": 0.596989966555184,
+      "f1": 0.32492997198879553
+    },
+    {
+      "threshold": 0.77,
+      "tp": 52,
+      "tn": 300,
+      "fp": 0,
+      "fn": 247,
+      "precision": 1.0,
+      "recall": 0.17391304347826086,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.8260869565217391,
+      "accuracy": 0.5876460767946577,
+      "balanced_accuracy": 0.5869565217391304,
+      "f1": 0.29629629629629634
+    },
+    {
+      "threshold": 0.78,
+      "tp": 42,
+      "tn": 300,
+      "fp": 0,
+      "fn": 257,
+      "precision": 1.0,
+      "recall": 0.14046822742474915,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.8595317725752508,
+      "accuracy": 0.5709515859766278,
+      "balanced_accuracy": 0.5702341137123745,
+      "f1": 0.24633431085043989
+    },
+    {
+      "threshold": 0.79,
+      "tp": 30,
+      "tn": 300,
+      "fp": 0,
+      "fn": 269,
+      "precision": 1.0,
+      "recall": 0.10033444816053512,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.8996655518394648,
+      "accuracy": 0.5509181969949917,
+      "balanced_accuracy": 0.5501672240802675,
+      "f1": 0.18237082066869303
+    },
+    {
+      "threshold": 0.8,
+      "tp": 24,
+      "tn": 300,
+      "fp": 0,
+      "fn": 275,
+      "precision": 1.0,
+      "recall": 0.0802675585284281,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.919732441471572,
+      "accuracy": 0.5409015025041736,
+      "balanced_accuracy": 0.540133779264214,
+      "f1": 0.14860681114551086
+    },
+    {
+      "threshold": 0.81,
+      "tp": 21,
+      "tn": 300,
+      "fp": 0,
+      "fn": 278,
+      "precision": 1.0,
+      "recall": 0.07023411371237458,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9297658862876255,
+      "accuracy": 0.5358931552587646,
+      "balanced_accuracy": 0.5351170568561873,
+      "f1": 0.13125
+    },
+    {
+      "threshold": 0.82,
+      "tp": 17,
+      "tn": 300,
+      "fp": 0,
+      "fn": 282,
+      "precision": 1.0,
+      "recall": 0.056856187290969896,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9431438127090301,
+      "accuracy": 0.5292153589315526,
+      "balanced_accuracy": 0.5284280936454849,
+      "f1": 0.10759493670886076
+    },
+    {
+      "threshold": 0.83,
+      "tp": 15,
+      "tn": 300,
+      "fp": 0,
+      "fn": 284,
+      "precision": 1.0,
+      "recall": 0.05016722408026756,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9498327759197325,
+      "accuracy": 0.5258764607679466,
+      "balanced_accuracy": 0.5250836120401338,
+      "f1": 0.09554140127388536
+    },
+    {
+      "threshold": 0.84,
+      "tp": 11,
+      "tn": 300,
+      "fp": 0,
+      "fn": 288,
+      "precision": 1.0,
+      "recall": 0.03678929765886288,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9632107023411371,
+      "accuracy": 0.5191986644407346,
+      "balanced_accuracy": 0.5183946488294314,
+      "f1": 0.07096774193548389
+    },
+    {
+      "threshold": 0.85,
+      "tp": 7,
+      "tn": 300,
+      "fp": 0,
+      "fn": 292,
+      "precision": 1.0,
+      "recall": 0.023411371237458192,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9765886287625418,
+      "accuracy": 0.5125208681135225,
+      "balanced_accuracy": 0.5117056856187291,
+      "f1": 0.0457516339869281
+    },
+    {
+      "threshold": 0.86,
+      "tp": 7,
+      "tn": 300,
+      "fp": 0,
+      "fn": 292,
+      "precision": 1.0,
+      "recall": 0.023411371237458192,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9765886287625418,
+      "accuracy": 0.5125208681135225,
+      "balanced_accuracy": 0.5117056856187291,
+      "f1": 0.0457516339869281
+    },
+    {
+      "threshold": 0.87,
+      "tp": 5,
+      "tn": 300,
+      "fp": 0,
+      "fn": 294,
+      "precision": 1.0,
+      "recall": 0.016722408026755852,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9832775919732442,
+      "accuracy": 0.5091819699499165,
+      "balanced_accuracy": 0.5083612040133779,
+      "f1": 0.03289473684210526
+    },
+    {
+      "threshold": 0.88,
+      "tp": 4,
+      "tn": 300,
+      "fp": 0,
+      "fn": 295,
+      "precision": 1.0,
+      "recall": 0.013377926421404682,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9866220735785953,
+      "accuracy": 0.5075125208681135,
+      "balanced_accuracy": 0.5066889632107023,
+      "f1": 0.026402640264026403
+    },
+    {
+      "threshold": 0.89,
+      "tp": 4,
+      "tn": 300,
+      "fp": 0,
+      "fn": 295,
+      "precision": 1.0,
+      "recall": 0.013377926421404682,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9866220735785953,
+      "accuracy": 0.5075125208681135,
+      "balanced_accuracy": 0.5066889632107023,
+      "f1": 0.026402640264026403
+    },
+    {
+      "threshold": 0.9,
+      "tp": 2,
+      "tn": 300,
+      "fp": 0,
+      "fn": 297,
+      "precision": 1.0,
+      "recall": 0.006688963210702341,
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.9933110367892977,
+      "accuracy": 0.5041736227045075,
+      "balanced_accuracy": 0.5033444816053512,
+      "f1": 0.013289036544850499
+    }
+  ],
+  "failed_images": {
+    "images/009/Morgan_Freeman_0002.jpg": "no face detected"
+  },
+  "elapsed_seconds": 726.5,
+  "pair_scores": [
+    {
+      "pair_id": 2710,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/000/Akbar_Al_Baker_0001.jpg",
+      "image_b": "images/001/Bobby_Goldwater_0001.jpg",
+      "score": 0.052501775324344635
+    },
+    {
+      "pair_id": 1196,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/011/Sheldon_Silver_0001.jpg",
+      "image_b": "images/013/Xavier_Malisse_0003.jpg",
+      "score": 0.009139878675341606
+    },
+    {
+      "pair_id": 5630,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/009/Mike_Martz_0001.jpg",
+      "image_b": "images/009/Mike_Martz_0003.jpg",
+      "score": 0.7778129577636719
+    },
+    {
+      "pair_id": 4137,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/008/Liu_Mingkang_0002.jpg",
+      "image_b": "images/010/Pedro_Pauleta_0001.jpg",
+      "score": 0.05454426258802414
+    },
+    {
+      "pair_id": 1392,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/008/Matt_Doherty_0002.jpg",
+      "image_b": "images/008/Matt_Doherty_0003.jpg",
+      "score": 0.7304977774620056
+    },
+    {
+      "pair_id": 5225,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/002/Dennis_Hastert_0005.jpg",
+      "image_b": "images/008/Lubomir_Zaoralek_0001.jpg",
+      "score": -0.1433822214603424
+    },
+    {
+      "pair_id": 3403,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/002/Condoleezza_Rice_0007.jpg",
+      "image_b": "images/011/Ryan_Nyquist_0001.jpg",
+      "score": 0.04131137579679489
+    },
+    {
+      "pair_id": 1435,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/010/Prince_Harry_0001.jpg",
+      "image_b": "images/010/Prince_Harry_0002.jpg",
+      "score": 0.817977786064148
+    },
+    {
+      "pair_id": 3536,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/007/Lawrence_Di_Rita_0001.jpg",
+      "image_b": "images/008/Mekhi_Phifer_0001.jpg",
+      "score": -0.09431856870651245
+    },
+    {
+      "pair_id": 4802,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/000/Al_Gore_0002.jpg",
+      "image_b": "images/000/Al_Gore_0006.jpg",
+      "score": 0.5956358909606934
+    },
+    {
+      "pair_id": 3620,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/001/Barry_Alvarez_0001.jpg",
+      "image_b": "images/001/Barry_Alvarez_0002.jpg",
+      "score": 0.7823178768157959
+    },
+    {
+      "pair_id": 5356,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/008/Luis_Fonsi_0001.jpg",
+      "image_b": "images/011/Steven_Briggs_0001.jpg",
+      "score": 0.0918264165520668
+    },
+    {
+      "pair_id": 3989,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/002/Courtney_Love_0001.jpg",
+      "image_b": "images/006/Jennifer_Aniston_0003.jpg",
+      "score": -0.04947540909051895
+    },
+    {
+      "pair_id": 852,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/011/Silvio_Berlusconi_0024.jpg",
+      "image_b": "images/011/Silvio_Berlusconi_0030.jpg",
+      "score": 0.6945136785507202
+    },
+    {
+      "pair_id": 3291,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/013/Winona_Ryder_0012.jpg",
+      "image_b": "images/013/Winona_Ryder_0019.jpg",
+      "score": 0.6985601782798767
+    },
+    {
+      "pair_id": 3962,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/001/Carina_Lau_Ka-ling_0001.jpg",
+      "image_b": "images/008/Lin_Yi-fu_0001.jpg",
+      "score": 0.05143245309591293
+    },
+    {
+      "pair_id": 2205,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/002/Daniel_Bruehl_0001.jpg",
+      "image_b": "images/008/Max_Mosley_0001.jpg",
+      "score": 0.10107296705245972
+    },
+    {
+      "pair_id": 1786,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/009/Park_Na-kyong_0001.jpg",
+      "image_b": "images/012/Vecdi_Gonul_0001.jpg",
+      "score": 0.010335919447243214
+    },
+    {
+      "pair_id": 1397,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/008/Megawati_Sukarnoputri_0007.jpg",
+      "image_b": "images/008/Megawati_Sukarnoputri_0022.jpg",
+      "score": 0.5752853155136108
+    },
+    {
+      "pair_id": 109,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/005/James_Caan_0002.jpg",
+      "image_b": "images/005/James_Caan_0003.jpg",
+      "score": 0.7842535972595215
+    },
+    {
+      "pair_id": 3963,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/001/Carlos_Ortega_0003.jpg",
+      "image_b": "images/008/Lionel_Hampton_0001.jpg",
+      "score": -0.07740983366966248
+    },
+    {
+      "pair_id": 472,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/004/Georgia_Giddings_0001.jpg",
+      "image_b": "images/008/Mahima_Chaudhari_0001.jpg",
+      "score": 0.08188089728355408
+    },
+    {
+      "pair_id": 1345,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/007/Keira_Knightley_0001.jpg",
+      "image_b": "images/007/Keira_Knightley_0002.jpg",
+      "score": 0.648232102394104
+    },
+    {
+      "pair_id": 5725,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/000/Alyse_Beaupre_0001.jpg",
+      "image_b": "images/005/Helo_Pinheiro_0001.jpg",
+      "score": -0.07896125316619873
+    },
+    {
+      "pair_id": 4453,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/011/Sadie_Frost_0001.jpg",
+      "image_b": "images/011/Sadie_Frost_0002.jpg",
+      "score": 0.45205122232437134
+    },
+    {
+      "pair_id": 3440,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/003/Elin_Nordegren_0001.jpg",
+      "image_b": "images/003/George_Brumley_III_0001.jpg",
+      "score": -0.026323799043893814
+    },
+    {
+      "pair_id": 3285,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/012/Wayne_Gretzky_0001.jpg",
+      "image_b": "images/012/Wayne_Gretzky_0002.jpg",
+      "score": 0.7959890365600586
+    },
+    {
+      "pair_id": 4335,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/007/Justine_Pasek_0006.jpg",
+      "image_b": "images/007/Justine_Pasek_0007.jpg",
+      "score": 0.678234338760376
+    },
+    {
+      "pair_id": 129,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/006/Jimmy_Carter_0005.jpg",
+      "image_b": "images/006/Jimmy_Carter_0008.jpg",
+      "score": 0.7863219976425171
+    },
+    {
+      "pair_id": 3873,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/011/Susan_Collins_0001.jpg",
+      "image_b": "images/011/Susan_Collins_0002.jpg",
+      "score": 0.5880931615829468
+    },
+    {
+      "pair_id": 4614,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/002/David_Wolf_0002.jpg",
+      "image_b": "images/012/Venus_Williams_0006.jpg",
+      "score": 0.05652749538421631
+    },
+    {
+      "pair_id": 3540,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/008/Lily_Tomlin_0001.jpg",
+      "image_b": "images/008/Marcos_Daniel_Jimenez_0001.jpg",
+      "score": -0.021521802991628647
+    },
+    {
+      "pair_id": 5907,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/006/Jesse_Ventura_0002.jpg",
+      "image_b": "images/007/Lela_Rochon_0001.jpg",
+      "score": -0.009240321815013885
+    },
+    {
+      "pair_id": 1067,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/004/Gloria_Allred_0002.jpg",
+      "image_b": "images/011/Roman_Tam_0001.jpg",
+      "score": -0.023914538323879242
+    },
+    {
+      "pair_id": 3724,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/006/John_Abizaid_0004.jpg",
+      "image_b": "images/006/John_Abizaid_0008.jpg",
+      "score": 0.6626741886138916
+    },
+    {
+      "pair_id": 3617,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/000/Anthony_LaPaglia_0001.jpg",
+      "image_b": "images/000/Anthony_LaPaglia_0002.jpg",
+      "score": 0.7881565093994141
+    },
+    {
+      "pair_id": 2882,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/004/Gunter_Pleuger_0003.jpg",
+      "image_b": "images/012/Vaclav_Klaus_0001.jpg",
+      "score": 0.033240050077438354
+    },
+    {
+      "pair_id": 5458,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/001/Cesar_Gaviria_0003.jpg",
+      "image_b": "images/001/Cesar_Gaviria_0006.jpg",
+      "score": 0.7322774529457092
+    },
+    {
+      "pair_id": 3053,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/002/Diana_Krall_0001.jpg",
+      "image_b": "images/002/Diana_Krall_0006.jpg",
+      "score": -0.048482056707143784
+    },
+    {
+      "pair_id": 677,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/002/Denzel_Washington_0002.jpg",
+      "image_b": "images/002/Denzel_Washington_0004.jpg",
+      "score": 0.5840096473693848
+    },
+    {
+      "pair_id": 4006,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/002/Dick_Latessa_0001.jpg",
+      "image_b": "images/006/John_Burnett_0001.jpg",
+      "score": 0.08755645155906677
+    },
+    {
+      "pair_id": 5589,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/008/Lisa_Raymond_0001.jpg",
+      "image_b": "images/008/Lisa_Raymond_0002.jpg",
+      "score": 0.7096854448318481
+    },
+    {
+      "pair_id": 4141,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/008/Luis_Gonzalez_0001.jpg",
+      "image_b": "images/012/Warren_Beatty_0001.jpg",
+      "score": -0.03768543154001236
+    },
+    {
+      "pair_id": 3972,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/001/Cheryl_Hines_0001.jpg",
+      "image_b": "images/003/Du_Qinglin_0001.jpg",
+      "score": -0.09245987981557846
+    },
+    {
+      "pair_id": 2249,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/003/Elijah_Wood_0002.jpg",
+      "image_b": "images/011/Stefano_Gabbana_0001.jpg",
+      "score": -0.028119022026658058
+    },
+    {
+      "pair_id": 1744,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/007/Lee_Yuan-tseh_0001.jpg",
+      "image_b": "images/011/Shafal_Mosed_0001.jpg",
+      "score": 0.089362733066082
+    },
+    {
+      "pair_id": 1371,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/008/Marco_Antonio_Barrera_0005.jpg",
+      "image_b": "images/008/Marco_Antonio_Barrera_0006.jpg",
+      "score": 0.6588642597198486
+    },
+    {
+      "pair_id": 2780,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/001/Brandon_Robinson_0001.jpg",
+      "image_b": "images/008/Michael_Linscott_0001.jpg",
+      "score": 0.030793264508247375
+    },
+    {
+      "pair_id": 3945,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/001/Bill_Curry_0001.jpg",
+      "image_b": "images/003/Ellen_Martin_0001.jpg",
+      "score": 0.03139888122677803
+    },
+    {
+      "pair_id": 5782,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/001/Brendan_Hansen_0002.jpg",
+      "image_b": "images/003/Dorothy_Wilson_0001.jpg",
+      "score": 0.019519340246915817
+    },
+    {
+      "pair_id": 1649,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/003/Eric_Benet_0001.jpg",
+      "image_b": "images/009/Mohammad_Mustapha_Miro_0001.jpg",
+      "score": -0.0038389102555811405
+    },
+    {
+      "pair_id": 4396,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/009/Michelle_Kwan_0004.jpg",
+      "image_b": "images/009/Michelle_Kwan_0005.jpg",
+      "score": 0.868750810623169
+    },
+    {
+      "pair_id": 2578,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/007/Laura_Linney_0003.jpg",
+      "image_b": "images/007/Laura_Linney_0004.jpg",
+      "score": 0.6567997932434082
+    },
+    {
+      "pair_id": 972,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/001/Celso_Amorim_0002.jpg",
+      "image_b": "images/007/Juljia_Vysotskij_0001.jpg",
+      "score": -0.039280880242586136
+    },
+    {
+      "pair_id": 1863,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/002/Damon_van_Dam_0001.jpg",
+      "image_b": "images/002/Damon_van_Dam_0002.jpg",
+      "score": 0.643355131149292
+    },
+    {
+      "pair_id": 2999,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/011/Tara_Kirk_0001.jpg",
+      "image_b": "images/013/Win_Aung_0001.jpg",
+      "score": -0.0018167169764637947
+    },
+    {
+      "pair_id": 55,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/003/Elinor_Caplan_0001.jpg",
+      "image_b": "images/003/Elinor_Caplan_0002.jpg",
+      "score": 0.7831462025642395
+    },
+    {
+      "pair_id": 1034,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/003/Elena_Tihomirova_0001.jpg",
+      "image_b": "images/009/Mohammed_Abu_Sharia_0001.jpg",
+      "score": -0.052603669464588165
+    },
+    {
+      "pair_id": 2412,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/000/Ari_Fleischer_0006.jpg",
+      "image_b": "images/000/Ari_Fleischer_0009.jpg",
+      "score": 0.7458694577217102
+    },
+    {
+      "pair_id": 820,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/010/Richard_Haass_0001.jpg",
+      "image_b": "images/010/Richard_Haass_0002.jpg",
+      "score": 0.7018721103668213
+    },
+    {
+      "pair_id": 1756,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/008/Marion_Fahnestock_0001.jpg",
+      "image_b": "images/012/Wen_Jiabao_0003.jpg",
+      "score": 0.09261853992938995
+    },
+    {
+      "pair_id": 3656,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/003/Donald_Rumsfeld_0060.jpg",
+      "image_b": "images/003/Donald_Rumsfeld_0067.jpg",
+      "score": 0.759717583656311
+    },
+    {
+      "pair_id": 1633,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/002/Don_Henley_0001.jpg",
+      "image_b": "images/004/Gil_Cates_0001.jpg",
+      "score": 0.035162799060344696
+    },
+    {
+      "pair_id": 3777,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/008/Mark_Geragos_0001.jpg",
+      "image_b": "images/008/Mark_Geragos_0002.jpg",
+      "score": 0.6327822208404541
+    },
+    {
+      "pair_id": 2257,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/003/Erin_Hershey_Presley_0001.jpg",
+      "image_b": "images/013/Yukio_Hatoyama_0001.jpg",
+      "score": 0.026864148676395416
+    },
+    {
+      "pair_id": 1688,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/005/Hugh_Campbell_0001.jpg",
+      "image_b": "images/008/Masamori_Tokuyama_0001.jpg",
+      "score": 0.01316448301076889
+    },
+    {
+      "pair_id": 622,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/000/Andre_Agassi_0004.jpg",
+      "image_b": "images/000/Andre_Agassi_0033.jpg",
+      "score": 0.6555864214897156
+    },
+    {
+      "pair_id": 323,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/000/Andrew_Gilligan_0001.jpg",
+      "image_b": "images/005/Henry_Castellanos_0001.jpg",
+      "score": 0.1369832158088684
+    },
+    {
+      "pair_id": 263,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/012/Tommy_Thompson_0001.jpg",
+      "image_b": "images/012/Tommy_Thompson_0002.jpg",
+      "score": 0.6479552984237671
+    },
+    {
+      "pair_id": 2615,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/009/Patrick_Leahy_0001.jpg",
+      "image_b": "images/009/Patrick_Leahy_0002.jpg",
+      "score": 0.6693370342254639
+    },
+    {
+      "pair_id": 999,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/002/Damarius_Bilbo_0001.jpg",
+      "image_b": "images/007/Juljia_Vysotskij_0001.jpg",
+      "score": 0.07499633729457855
+    },
+    {
+      "pair_id": 1917,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/006/Jennifer_Capriati_0002.jpg",
+      "image_b": "images/006/Jennifer_Capriati_0014.jpg",
+      "score": 0.4544043242931366
+    },
+    {
+      "pair_id": 5329,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/007/Keith_Osik_0001.jpg",
+      "image_b": "images/010/Pupi_Avati_0001.jpg",
+      "score": 0.010099019855260849
+    },
+    {
+      "pair_id": 5898,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/005/Jay_Rasulo_0001.jpg",
+      "image_b": "images/009/Nova_Esther_Guthrie_0001.jpg",
+      "score": 0.11819987744092941
+    },
+    {
+      "pair_id": 5290,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/005/James_Williams_0001.jpg",
+      "image_b": "images/011/Shaun_Pollock_0001.jpg",
+      "score": -0.07939177751541138
+    },
+    {
+      "pair_id": 3303,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/000/Ahmed_Chalabi_0001.jpg",
+      "image_b": "images/011/Rosario_Dawson_0001.jpg",
+      "score": -0.061176277697086334
+    },
+    {
+      "pair_id": 1124,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/007/Kate_Lee_0001.jpg",
+      "image_b": "images/012/Toshimitsu_Motegi_0001.jpg",
+      "score": -0.020461004227399826
+    },
+    {
+      "pair_id": 4176,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/010/Phil_Morris_0001.jpg",
+      "image_b": "images/010/Roberto_Guaterroma_0001.jpg",
+      "score": 0.03701097145676613
+    },
+    {
+      "pair_id": 612,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/000/Al_Sharpton_0002.jpg",
+      "image_b": "images/000/Al_Sharpton_0007.jpg",
+      "score": 0.7783085107803345
+    },
+    {
+      "pair_id": 1790,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/010/Renee_Zellweger_0009.jpg",
+      "image_b": "images/013/Yuri_Malenchenko_0002.jpg",
+      "score": 0.04440051317214966
+    },
+    {
+      "pair_id": 5590,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/008/Lord_Hutton_0001.jpg",
+      "image_b": "images/008/Lord_Hutton_0002.jpg",
+      "score": 0.7683743834495544
+    },
+    {
+      "pair_id": 5035,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/010/Queen_Latifah_0002.jpg",
+      "image_b": "images/010/Queen_Latifah_0004.jpg",
+      "score": 0.6673983931541443
+    },
+    {
+      "pair_id": 5576,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/007/Kurt_Warner_0001.jpg",
+      "image_b": "images/007/Kurt_Warner_0002.jpg",
+      "score": 0.6284112930297852
+    },
+    {
+      "pair_id": 2472,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/002/Conan_OBrien_0002.jpg",
+      "image_b": "images/002/Conan_OBrien_0003.jpg",
+      "score": 0.7466716766357422
+    },
+    {
+      "pair_id": 5915,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/006/Joe_Dumars_0002.jpg",
+      "image_b": "images/012/Timothy_McVeigh_0001.jpg",
+      "score": -0.002118835225701332
+    },
+    {
+      "pair_id": 3582,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/010/Raja_Ramani_0001.jpg",
+      "image_b": "images/010/Richard_Greenberg_0001.jpg",
+      "score": -0.07639971375465393
+    },
+    {
+      "pair_id": 5027,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/010/Peter_Costello_0001.jpg",
+      "image_b": "images/010/Peter_Costello_0002.jpg",
+      "score": 0.5883865356445312
+    },
+    {
+      "pair_id": 3970,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/001/Charlotte_Church_0001.jpg",
+      "image_b": "images/007/Kaoru_Hasuike_0001.jpg",
+      "score": 0.03395555168390274
+    },
+    {
+      "pair_id": 4486,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/012/Tim_Robbins_0001.jpg",
+      "image_b": "images/012/Tim_Robbins_0005.jpg",
+      "score": 0.7079031467437744
+    },
+    {
+      "pair_id": 3392,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/002/Chris_Cornell_0001.jpg",
+      "image_b": "images/002/Desmon_Farmer_0001.jpg",
+      "score": 0.017202820628881454
+    },
+    {
+      "pair_id": 630,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/000/Annette_Lu_0001.jpg",
+      "image_b": "images/000/Annette_Lu_0002.jpg",
+      "score": 0.6698702573776245
+    },
+    {
+      "pair_id": 4345,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/007/Kurt_Russell_0001.jpg",
+      "image_b": "images/007/Kurt_Russell_0002.jpg",
+      "score": 0.6379745006561279
+    },
+    {
+      "pair_id": 5160,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/001/Billy_Sollie_0001.jpg",
+      "image_b": "images/008/Mark_Swartz_0001.jpg",
+      "score": 0.02343561500310898
+    },
+    {
+      "pair_id": 3952,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/001/Brandon_Fails_0001.jpg",
+      "image_b": "images/003/Ellen_Engleman_0002.jpg",
+      "score": -0.01674538478255272
+    },
+    {
+      "pair_id": 3772,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/008/Luiz_Inacio_Lula_da_Silva_0028.jpg",
+      "image_b": "images/008/Luiz_Inacio_Lula_da_Silva_0044.jpg",
+      "score": 0.6290174126625061
+    },
+    {
+      "pair_id": 1873,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/003/Elizabeth_Hurley_0001.jpg",
+      "image_b": "images/003/Elizabeth_Hurley_0004.jpg",
+      "score": 0.5490026473999023
+    },
+    {
+      "pair_id": 1117,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/006/John_Burkett_0001.jpg",
+      "image_b": "images/007/Leonardo_DiCaprio_0002.jpg",
+      "score": 0.03083709441125393
+    },
+    {
+      "pair_id": 4722,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/007/Joy_Bryant_0001.jpg",
+      "image_b": "images/010/Richard_Chamberlain_0001.jpg",
+      "score": 0.07196645438671112
+    },
+    {
+      "pair_id": 2783,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/001/Brett_Boone_0001.jpg",
+      "image_b": "images/005/Jean-Marc_de_La_Sabliere_0001.jpg",
+      "score": 0.06703561544418335
+    },
+    {
+      "pair_id": 3416,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/002/David_Surrett_0001.jpg",
+      "image_b": "images/009/Michael_Taylor_0001.jpg",
+      "score": 0.05955776572227478
+    },
+    {
+      "pair_id": 837,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/011/Sandra_Bullock_0001.jpg",
+      "image_b": "images/011/Sandra_Bullock_0003.jpg",
+      "score": 0.7227321267127991
+    },
+    {
+      "pair_id": 1915,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/005/Jean-Pierre_Raffarin_0006.jpg",
+      "image_b": "images/005/Jean-Pierre_Raffarin_0007.jpg",
+      "score": 0.7268714904785156
+    },
+    {
+      "pair_id": 4272,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/003/George_Pataki_0001.jpg",
+      "image_b": "images/003/George_Pataki_0003.jpg",
+      "score": 0.7255443334579468
+    },
+    {
+      "pair_id": 3372,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/001/Bryant_Young_0001.jpg",
+      "image_b": "images/006/Jim_Bollman_0001.jpg",
+      "score": -0.021567339077591896
+    },
+    {
+      "pair_id": 178,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/008/Lleyton_Hewitt_0024.jpg",
+      "image_b": "images/008/Lleyton_Hewitt_0036.jpg",
+      "score": 0.6967191696166992
+    },
+    {
+      "pair_id": 4181,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/010/Reese_Witherspoon_0001.jpg",
+      "image_b": "images/011/Sam_Torrance_0001.jpg",
+      "score": 0.09141720831394196
+    },
+    {
+      "pair_id": 934,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/001/Bernardo_Segura_0002.jpg",
+      "image_b": "images/003/Douglas_Paal_0001.jpg",
+      "score": 0.1391081064939499
+    },
+    {
+      "pair_id": 5213,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/002/Dale_Bosworth_0001.jpg",
+      "image_b": "images/012/Vladimir_Golovlyov_0001.jpg",
+      "score": -0.03592421114444733
+    },
+    {
+      "pair_id": 931,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/001/Ben_Kingsley_0001.jpg",
+      "image_b": "images/010/Perry_Farrell_0001.jpg",
+      "score": -0.013028835877776146
+    },
+    {
+      "pair_id": 2712,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/000/Alain_Cervantes_0001.jpg",
+      "image_b": "images/010/Pierre_Png_0001.jpg",
+      "score": -0.14890682697296143
+    },
+    {
+      "pair_id": 104,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/005/Jacques_Rogge_0004.jpg",
+      "image_b": "images/005/Jacques_Rogge_0009.jpg",
+      "score": 0.7322080731391907
+    },
+    {
+      "pair_id": 4977,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/007/Lars_Von_Trier_0002.jpg",
+      "image_b": "images/007/Lars_Von_Trier_0003.jpg",
+      "score": 0.7133910655975342
+    },
+    {
+      "pair_id": 5674,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/011/Sepp_Blatter_0002.jpg",
+      "image_b": "images/011/Sepp_Blatter_0003.jpg",
+      "score": 0.6174554228782654
+    },
+    {
+      "pair_id": 2594,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/009/Mick_Jagger_0002.jpg",
+      "image_b": "images/009/Mick_Jagger_0004.jpg",
+      "score": 0.5295060873031616
+    },
+    {
+      "pair_id": 4240,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/002/Ciro_Gomes_0003.jpg",
+      "image_b": "images/002/Ciro_Gomes_0005.jpg",
+      "score": 0.802193820476532
+    },
+    {
+      "pair_id": 118,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/006/Jennifer_Garner_0005.jpg",
+      "image_b": "images/006/Jennifer_Garner_0009.jpg",
+      "score": 0.7503591775894165
+    },
+    {
+      "pair_id": 4133,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/007/Leslie_Caldwell_0001.jpg",
+      "image_b": "images/011/Shane_Reynolds_0001.jpg",
+      "score": 0.053544797003269196
+    },
+    {
+      "pair_id": 305,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/000/Abel_Pacheco_0002.jpg",
+      "image_b": "images/005/Jean-Francois_Lemounier_0001.jpg",
+      "score": -0.13117565214633942
+    },
+    {
+      "pair_id": 3399,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/002/Claudia_Schiffer_0001.jpg",
+      "image_b": "images/008/Lynn_Abraham_0002.jpg",
+      "score": -0.010093342512845993
+    },
+    {
+      "pair_id": 4843,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/001/Bulent_Ecevit_0002.jpg",
+      "image_b": "images/001/Bulent_Ecevit_0006.jpg",
+      "score": 0.6892344355583191
+    },
+    {
+      "pair_id": 4062,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/004/Guillermo_Ortiz_0001.jpg",
+      "image_b": "images/009/Nestor_Santillan_0001.jpg",
+      "score": -0.03373650461435318
+    },
+    {
+      "pair_id": 5113,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/000/Alexandra_Pelosi_0001.jpg",
+      "image_b": "images/007/Ken_Kutaragi_0001.jpg",
+      "score": -0.01882585510611534
+    },
+    {
+      "pair_id": 3765,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/008/Luis_Horna_0002.jpg",
+      "image_b": "images/008/Luis_Horna_0004.jpg",
+      "score": 0.385627806186676
+    },
+    {
+      "pair_id": 4951,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/006/John_Brady_0001.jpg",
+      "image_b": "images/006/John_Brady_0002.jpg",
+      "score": 0.6946327090263367
+    },
+    {
+      "pair_id": 3642,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/002/Clara_Harris_0001.jpg",
+      "image_b": "images/002/Clara_Harris_0005.jpg",
+      "score": 0.7042970657348633
+    },
+    {
+      "pair_id": 12,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/000/Anthony_Fauci_0001.jpg",
+      "image_b": "images/000/Anthony_Fauci_0002.jpg",
+      "score": 0.7727303504943848
+    },
+    {
+      "pair_id": 4717,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/006/Johnnie_Lynn_0001.jpg",
+      "image_b": "images/007/Larry_Coker_0004.jpg",
+      "score": -0.07264985144138336
+    },
+    {
+      "pair_id": 2491,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/002/Derek_Jeter_0002.jpg",
+      "image_b": "images/002/Derek_Jeter_0004.jpg",
+      "score": 0.6281131505966187
+    },
+    {
+      "pair_id": 2362,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/008/Marion_Barry_0001.jpg",
+      "image_b": "images/011/Steve_Peace_0001.jpg",
+      "score": 0.006449042819440365
+    },
+    {
+      "pair_id": 325,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/000/Andrew_Shutley_0001.jpg",
+      "image_b": "images/009/Mitchell_Swartz_0001.jpg",
+      "score": 0.05418974906206131
+    },
+    {
+      "pair_id": 114,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/006/Jeffrey_Archer_0001.jpg",
+      "image_b": "images/006/Jeffrey_Archer_0002.jpg",
+      "score": 0.7244993448257446
+    },
+    {
+      "pair_id": 3787,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/008/Martha_Lucia_Ramirez_0003.jpg",
+      "image_b": "images/008/Martha_Lucia_Ramirez_0004.jpg",
+      "score": 0.6630358695983887
+    },
+    {
+      "pair_id": 4677,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/005/Horacio_Julio_Pina_0001.jpg",
+      "image_b": "images/013/Zaini_Abdullah_0001.jpg",
+      "score": -0.059442467987537384
+    },
+    {
+      "pair_id": 465,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/003/Garry_Witherall_0001.jpg",
+      "image_b": "images/005/Howard_Stern_0001.jpg",
+      "score": 0.09133227169513702
+    },
+    {
+      "pair_id": 1307,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/006/Jessica_Lynch_0001.jpg",
+      "image_b": "images/006/Jessica_Lynch_0002.jpg",
+      "score": 0.564743161201477
+    },
+    {
+      "pair_id": 3893,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/012/Victoria_Beckham_0002.jpg",
+      "image_b": "images/012/Victoria_Beckham_0003.jpg",
+      "score": 0.5731855630874634
+    },
+    {
+      "pair_id": 2478,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/002/David_Hyde_Pierce_0001.jpg",
+      "image_b": "images/002/David_Hyde_Pierce_0002.jpg",
+      "score": 0.6645441055297852
+    },
+    {
+      "pair_id": 4147,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/008/Marina_Canetti_0001.jpg",
+      "image_b": "images/011/Saied_Hadi_al_Mudarissi_0001.jpg",
+      "score": 0.04579039663076401
+    },
+    {
+      "pair_id": 2010,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/010/Paulo_Cesar_Pinheiro_0001.jpg",
+      "image_b": "images/010/Paulo_Cesar_Pinheiro_0002.jpg",
+      "score": 0.9493107795715332
+    },
+    {
+      "pair_id": 5379,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/009/Nabil_Shaath_0003.jpg",
+      "image_b": "images/011/Silvie_Cabero_0001.jpg",
+      "score": 0.046047430485486984
+    },
+    {
+      "pair_id": 2591,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/008/Marty_Mornhinweg_0002.jpg",
+      "image_b": "images/008/Marty_Mornhinweg_0003.jpg",
+      "score": 0.6832385063171387
+    },
+    {
+      "pair_id": 4013,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/003/Du_Qinglin_0001.jpg",
+      "image_b": "images/008/Meryl_Streep_0007.jpg",
+      "score": 0.07043652981519699
+    },
+    {
+      "pair_id": 4438,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/010/Richard_Krajicek_0002.jpg",
+      "image_b": "images/010/Richard_Krajicek_0003.jpg",
+      "score": 0.5854611396789551
+    },
+    {
+      "pair_id": 2354,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/008/Lydia_Shum_0001.jpg",
+      "image_b": "images/008/Mario_Vasquez_Rana_0001.jpg",
+      "score": 0.005968930199742317
+    },
+    {
+      "pair_id": 384,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/001/Carlo_Azeglio_Ciampi_0001.jpg",
+      "image_b": "images/003/Francis_Ford_Coppola_0001.jpg",
+      "score": -0.0749422162771225
+    },
+    {
+      "pair_id": 1025,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/003/Donald_Keyser_0001.jpg",
+      "image_b": "images/011/Salma_Hayek_0002.jpg",
+      "score": 0.04140714183449745
+    },
+    {
+      "pair_id": 1310,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/006/Jiang_Zemin_0004.jpg",
+      "image_b": "images/006/Jiang_Zemin_0010.jpg",
+      "score": 0.4962196946144104
+    },
+    {
+      "pair_id": 4732,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/007/Kenny_Chesney_0001.jpg",
+      "image_b": "images/011/Steve_Coogan_0001.jpg",
+      "score": -0.08178523182868958
+    },
+    {
+      "pair_id": 2933,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/006/John_Cornyn_0001.jpg",
+      "image_b": "images/007/Jose_Mourinho_0002.jpg",
+      "score": -0.01611027494072914
+    },
+    {
+      "pair_id": 2372,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/009/Michael_Winterbottom_0001.jpg",
+      "image_b": "images/010/Pierre_Boulanger_0001.jpg",
+      "score": 0.017592107877135277
+    },
+    {
+      "pair_id": 5070,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/011/Stellan_Skarsgard_0001.jpg",
+      "image_b": "images/011/Stellan_Skarsgard_0002.jpg",
+      "score": 0.69743812084198
+    },
+    {
+      "pair_id": 5098,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/013/Zhang_Wenkang_0001.jpg",
+      "image_b": "images/013/Zhang_Wenkang_0002.jpg",
+      "score": 0.7486624121665955
+    },
+    {
+      "pair_id": 1750,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/008/Mahdi_Al_Bassam_0001.jpg",
+      "image_b": "images/008/Marc-Andre_Fleury_0002.jpg",
+      "score": 0.023830223828554153
+    },
+    {
+      "pair_id": 1281,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/004/Glafcos_Clerides_0002.jpg",
+      "image_b": "images/004/Glafcos_Clerides_0003.jpg",
+      "score": 0.8493531942367554
+    },
+    {
+      "pair_id": 4643,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/003/Fernando_Valenzuela_0001.jpg",
+      "image_b": "images/008/Luis_Figo_0003.jpg",
+      "score": 0.030120106413960457
+    },
+    {
+      "pair_id": 1243,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/002/Claire_Hentzen_0001.jpg",
+      "image_b": "images/002/Claire_Hentzen_0002.jpg",
+      "score": 0.8685239553451538
+    },
+    {
+      "pair_id": 2543,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/005/Jean-Francois_Pontal_0001.jpg",
+      "image_b": "images/005/Jean-Francois_Pontal_0003.jpg",
+      "score": 0.7157649397850037
+    },
+    {
+      "pair_id": 5826,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/002/David_Wells_0001.jpg",
+      "image_b": "images/013/Yannos_Papantoniou_0001.jpg",
+      "score": 0.058292604982852936
+    },
+    {
+      "pair_id": 1658,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/003/Frank_Keating_0001.jpg",
+      "image_b": "images/009/Paul_McCartney_0007.jpg",
+      "score": 0.028099533170461655
+    },
+    {
+      "pair_id": 2658,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/011/Sylvester_Stallone_0001.jpg",
+      "image_b": "images/011/Sylvester_Stallone_0005.jpg",
+      "score": 0.5200996994972229
+    },
+    {
+      "pair_id": 3898,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/013/Yoko_Ono_0001.jpg",
+      "image_b": "images/013/Yoko_Ono_0004.jpg",
+      "score": 0.6912651062011719
+    },
+    {
+      "pair_id": 4415,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/009/Nia_Vardalos_0001.jpg",
+      "image_b": "images/009/Nia_Vardalos_0003.jpg",
+      "score": 0.6303329467773438
+    },
+    {
+      "pair_id": 989,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/002/Cindy_Moll_0001.jpg",
+      "image_b": "images/010/Robin_Johansen_0001.jpg",
+      "score": -0.015876471996307373
+    },
+    {
+      "pair_id": 423,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/002/Dean_Jacek_0001.jpg",
+      "image_b": "images/007/Larry_Wilmore_0001.jpg",
+      "score": -0.13287314772605896
+    },
+    {
+      "pair_id": 4187,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/010/Robert_Tyrrell_0001.jpg",
+      "image_b": "images/013/Yuri_Luzhkov_0001.jpg",
+      "score": -0.03146839886903763
+    },
+    {
+      "pair_id": 1570,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/001/Bob_Riley_0001.jpg",
+      "image_b": "images/011/Sheila_Wellstone_0002.jpg",
+      "score": -0.0938292071223259
+    },
+    {
+      "pair_id": 2841,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/003/Donna_Shalala_0002.jpg",
+      "image_b": "images/011/Sereyvuth_Kem_0001.jpg",
+      "score": -0.02579583041369915
+    },
+    {
+      "pair_id": 3804,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/009/Muhammad_Saeed_al-Sahhaf_0003.jpg",
+      "image_b": "images/009/Muhammad_Saeed_al-Sahhaf_0005.jpg",
+      "score": 0.6054055690765381
+    },
+    {
+      "pair_id": 2436,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/001/Bono_0001.jpg",
+      "image_b": "images/001/Bono_0002.jpg",
+      "score": 0.5758103728294373
+    },
+    {
+      "pair_id": 5216,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/002/Dan_Quayle_0001.jpg",
+      "image_b": "images/013/William_Umbach_0001.jpg",
+      "score": 0.12634210288524628
+    },
+    {
+      "pair_id": 2992,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/010/Robert_Kipkoech_Cheruiyot_0001.jpg",
+      "image_b": "images/011/Sally_Kirkland_0003.jpg",
+      "score": -0.042382754385471344
+    },
+    {
+      "pair_id": 4012,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/003/Donald_Carty_0001.jpg",
+      "image_b": "images/012/Vladimir_Putin_0034.jpg",
+      "score": 0.04762497544288635
+    },
+    {
+      "pair_id": 4373,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/008/Luke_Walton_0001.jpg",
+      "image_b": "images/008/Luke_Walton_0002.jpg",
+      "score": 0.7553566694259644
+    },
+    {
+      "pair_id": 2655,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/011/Stanley_Tong_0001.jpg",
+      "image_b": "images/011/Stanley_Tong_0002.jpg",
+      "score": 0.7637355327606201
+    },
+    {
+      "pair_id": 2871,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/004/Gilles_Panizzi_0001.jpg",
+      "image_b": "images/006/Jim_Piper_0001.jpg",
+      "score": 0.06339915096759796
+    },
+    {
+      "pair_id": 4323,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/007/Julianne_Moore_0004.jpg",
+      "image_b": "images/007/Julianne_Moore_0009.jpg",
+      "score": 0.7398115396499634
+    },
+    {
+      "pair_id": 3486,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/005/Idi_Amin_0001.jpg",
+      "image_b": "images/011/Stephen_Silas_0001.jpg",
+      "score": -0.06311027705669403
+    },
+    {
+      "pair_id": 2878,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/004/Graham_Bentley_0001.jpg",
+      "image_b": "images/005/Jason_Clermont_0001.jpg",
+      "score": -0.0354095995426178
+    },
+    {
+      "pair_id": 3639,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/002/Christina_Aguilera_0001.jpg",
+      "image_b": "images/002/Christina_Aguilera_0002.jpg",
+      "score": 0.3245890736579895
+    },
+    {
+      "pair_id": 833,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/011/Saddam_Hussein_0006.jpg",
+      "image_b": "images/011/Saddam_Hussein_0009.jpg",
+      "score": 0.7787849307060242
+    },
+    {
+      "pair_id": 5128,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/000/Andres_Manuel_Lopez_Obrador_0001.jpg",
+      "image_b": "images/006/Jim_Parque_0001.jpg",
+      "score": -0.03408843278884888
+    },
+    {
+      "pair_id": 2978,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/009/Mukhtar_Alytnbayev_0001.jpg",
+      "image_b": "images/009/Oracene_Williams_0001.jpg",
+      "score": -0.06420253217220306
+    },
+    {
+      "pair_id": 1264,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/003/Ernie_Eves_0001.jpg",
+      "image_b": "images/003/Ernie_Eves_0002.jpg",
+      "score": 0.7434832453727722
+    },
+    {
+      "pair_id": 2696,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/013/Win_Aung_0001.jpg",
+      "image_b": "images/013/Win_Aung_0003.jpg",
+      "score": 0.6607270240783691
+    },
+    {
+      "pair_id": 572,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/009/Nora_Bendijo_0001.jpg",
+      "image_b": "images/013/William_Martin_0002.jpg",
+      "score": -0.017256304621696472
+    },
+    {
+      "pair_id": 3088,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/004/Gerard_Depardieu_0001.jpg",
+      "image_b": "images/004/Gerard_Depardieu_0002.jpg",
+      "score": 0.8940668106079102
+    },
+    {
+      "pair_id": 1932,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/006/John_Travolta_0005.jpg",
+      "image_b": "images/006/John_Travolta_0007.jpg",
+      "score": 0.5169347524642944
+    },
+    {
+      "pair_id": 224,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/010/Prince_Edward_0001.jpg",
+      "image_b": "images/010/Prince_Edward_0002.jpg",
+      "score": 0.6367677450180054
+    },
+    {
+      "pair_id": 1524,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/000/Amy_Redford_0001.jpg",
+      "image_b": "images/012/Victor_Kraatz_0001.jpg",
+      "score": -0.06258197128772736
+    },
+    {
+      "pair_id": 3770,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/008/Luiz_Inacio_Lula_da_Silva_0010.jpg",
+      "image_b": "images/008/Luiz_Inacio_Lula_da_Silva_0019.jpg",
+      "score": 0.7224112749099731
+    },
+    {
+      "pair_id": 1232,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/001/Bridget_Fonda_0002.jpg",
+      "image_b": "images/001/Bridget_Fonda_0003.jpg",
+      "score": 0.6793997287750244
+    },
+    {
+      "pair_id": 292,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/012/William_Macy_0001.jpg",
+      "image_b": "images/012/William_Macy_0004.jpg",
+      "score": 0.7350172996520996
+    },
+    {
+      "pair_id": 4114,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/006/Jose_Dirceu_0001.jpg",
+      "image_b": "images/010/Robert_Torricelli_0003.jpg",
+      "score": 0.05422069877386093
+    },
+    {
+      "pair_id": 536,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/007/Justin_Guarini_0002.jpg",
+      "image_b": "images/010/Prince_Edward_0001.jpg",
+      "score": 0.03162359446287155
+    },
+    {
+      "pair_id": 2527,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/005/Harry_Belafonte_0001.jpg",
+      "image_b": "images/005/Harry_Belafonte_0002.jpg",
+      "score": 0.7314449548721313
+    },
+    {
+      "pair_id": 2560,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/006/John_Edwards_0006.jpg",
+      "image_b": "images/006/John_Edwards_0007.jpg",
+      "score": 0.6707478761672974
+    },
+    {
+      "pair_id": 42,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/002/Corinne_Coman_0001.jpg",
+      "image_b": "images/002/Corinne_Coman_0002.jpg",
+      "score": 0.7860543727874756
+    },
+    {
+      "pair_id": 4290,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/005/Horst_Koehler_0001.jpg",
+      "image_b": "images/005/Horst_Koehler_0003.jpg",
+      "score": 0.6253618001937866
+    },
+    {
+      "pair_id": 636,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/001/Bashar_Assad_0002.jpg",
+      "image_b": "images/001/Bashar_Assad_0004.jpg",
+      "score": 0.7020557522773743
+    },
+    {
+      "pair_id": 2711,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/000/Alain_Cervantes_0001.jpg",
+      "image_b": "images/001/Bob_Huggins_0003.jpg",
+      "score": -0.033463992178440094
+    },
+    {
+      "pair_id": 2952,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/007/Karen_Pereiras_0001.jpg",
+      "image_b": "images/008/Michael_Phelps_0002.jpg",
+      "score": 0.0038946056738495827
+    },
+    {
+      "pair_id": 1002,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/002/Daniel_Radcliffe_0003.jpg",
+      "image_b": "images/002/Diane_Green_0002.jpg",
+      "score": 0.038551464676856995
+    },
+    {
+      "pair_id": 4185,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/010/Robert_Mugabe_0001.jpg",
+      "image_b": "images/012/Tessa_Jowell_0001.jpg",
+      "score": 0.10230454802513123
+    },
+    {
+      "pair_id": 799,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/009/Mitchell_Daniels_0001.jpg",
+      "image_b": "images/009/Mitchell_Daniels_0004.jpg",
+      "score": 0.7459207773208618
+    },
+    {
+      "pair_id": 734,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/005/Jacques_Chirac_0002.jpg",
+      "image_b": "images/005/Jacques_Chirac_0043.jpg",
+      "score": 0.7303609251976013
+    },
+    {
+      "pair_id": 4678,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/005/Huang_Suey-Sheng_0001.jpg",
+      "image_b": "images/008/Lucrecia_Orozco_0001.jpg",
+      "score": 0.016988791525363922
+    },
+    {
+      "pair_id": 354,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/001/Bill_Bradley_0001.jpg",
+      "image_b": "images/005/Helen_Alvare_0001.jpg",
+      "score": -0.010507628321647644
+    },
+    {
+      "pair_id": 5768,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/001/Bernadette_Peters_0001.jpg",
+      "image_b": "images/003/Ed_Smart_0001.jpg",
+      "score": -0.09685098379850388
+    },
+    {
+      "pair_id": 219,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/010/Pervez_Musharraf_0003.jpg",
+      "image_b": "images/010/Pervez_Musharraf_0010.jpg",
+      "score": 0.7939592003822327
+    },
+    {
+      "pair_id": 307,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/000/Ahmad_Jbarah_0001.jpg",
+      "image_b": "images/005/James_Comey_0001.jpg",
+      "score": -0.0900421142578125
+    },
+    {
+      "pair_id": 5808,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/002/Curtis_Strange_0001.jpg",
+      "image_b": "images/010/Raul_Chacon_0001.jpg",
+      "score": 0.000993112102150917
+    },
+    {
+      "pair_id": 1120,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/006/Jonathan_Tiomkin_0001.jpg",
+      "image_b": "images/010/Rita_Grande_0002.jpg",
+      "score": -0.014370367862284184
+    },
+    {
+      "pair_id": 1094,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/005/Iveta_Benesova_0001.jpg",
+      "image_b": "images/005/Jacques_Chirac_0050.jpg",
+      "score": 0.0547671802341938
+    },
+    {
+      "pair_id": 1383,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/008/Martin_Brodeur_0001.jpg",
+      "image_b": "images/008/Martin_Brodeur_0002.jpg",
+      "score": 0.5990553498268127
+    },
+    {
+      "pair_id": 1380,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/008/Martha_Stewart_0002.jpg",
+      "image_b": "images/008/Martha_Stewart_0003.jpg",
+      "score": 0.8314470648765564
+    },
+    {
+      "pair_id": 372,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/001/Brawley_King_0001.jpg",
+      "image_b": "images/012/Tom_Glavine_0002.jpg",
+      "score": -0.11039699614048004
+    },
+    {
+      "pair_id": 2719,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/000/Alfredo_Pena_0001.jpg",
+      "image_b": "images/003/Emmanuel_Milingo_0001.jpg",
+      "score": 0.08370047807693481
+    },
+    {
+      "pair_id": 164,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/007/Kim_Jong-Il_0002.jpg",
+      "image_b": "images/007/Kim_Jong-Il_0003.jpg",
+      "score": 0.7947792410850525
+    },
+    {
+      "pair_id": 4211,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/000/Arnold_Schwarzenegger_0012.jpg",
+      "image_b": "images/000/Arnold_Schwarzenegger_0037.jpg",
+      "score": 0.7055180668830872
+    },
+    {
+      "pair_id": 1357,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/007/Larry_Thompson_0002.jpg",
+      "image_b": "images/007/Larry_Thompson_0004.jpg",
+      "score": 0.7571865320205688
+    },
+    {
+      "pair_id": 5968,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/009/Mira_Sorvino_0001.jpg",
+      "image_b": "images/012/Tom_Tunney_0001.jpg",
+      "score": 0.07457360625267029
+    },
+    {
+      "pair_id": 5344,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/007/Lars_Von_Trier_0001.jpg",
+      "image_b": "images/013/Zhang_Wenkang_0002.jpg",
+      "score": -0.06369160115718842
+    },
+    {
+      "pair_id": 2073,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/012/Valentino_Rossi_0004.jpg",
+      "image_b": "images/012/Valentino_Rossi_0005.jpg",
+      "score": 0.5894889831542969
+    },
+    {
+      "pair_id": 5717,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/000/Alejandro_Avila_0003.jpg",
+      "image_b": "images/001/Benjamin_Franklin_0001.jpg",
+      "score": -0.0177597776055336
+    },
+    {
+      "pair_id": 4676,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/005/Hitoshi_Tanaka_0001.jpg",
+      "image_b": "images/010/Ramon_Ponce_de_Leon_0001.jpg",
+      "score": -0.0013023018836975098
+    },
+    {
+      "pair_id": 5386,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/010/Paul_Wollnough_0001.jpg",
+      "image_b": "images/010/Philip_Cummings_0001.jpg",
+      "score": 0.0011936724185943604
+    },
+    {
+      "pair_id": 4180,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/010/Randy_Jackson_0001.jpg",
+      "image_b": "images/011/Steve_Alford_0001.jpg",
+      "score": 0.0812138020992279
+    },
+    {
+      "pair_id": 1231,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/001/Bridget_Fonda_0001.jpg",
+      "image_b": "images/001/Bridget_Fonda_0003.jpg",
+      "score": 0.6470263004302979
+    },
+    {
+      "pair_id": 2940,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/006/John_Wright_0001.jpg",
+      "image_b": "images/012/Trevor_McDonald_0001.jpg",
+      "score": 0.02814321219921112
+    },
+    {
+      "pair_id": 3749,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/007/Kofi_Annan_0013.jpg",
+      "image_b": "images/007/Kofi_Annan_0025.jpg",
+      "score": 0.7593266367912292
+    },
+    {
+      "pair_id": 3895,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/012/Vladimir_Putin_0022.jpg",
+      "image_b": "images/012/Vladimir_Putin_0031.jpg",
+      "score": 0.6585026979446411
+    },
+    {
+      "pair_id": 5757,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/001/Atiabet_Ijan_Amabel_0001.jpg",
+      "image_b": "images/006/John_Perrota_0001.jpg",
+      "score": 0.07567591965198517
+    },
+    {
+      "pair_id": 1571,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/001/Brad_Wilk_0001.jpg",
+      "image_b": "images/010/Phil_Cline_0001.jpg",
+      "score": 0.03346140682697296
+    },
+    {
+      "pair_id": 1373,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/008/Marieta_Chrousala_0001.jpg",
+      "image_b": "images/008/Marieta_Chrousala_0002.jpg",
+      "score": 0.7150944471359253
+    },
+    {
+      "pair_id": 2836,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/002/Derrick_Battie_0001.jpg",
+      "image_b": "images/005/Ian_Huntley_0001.jpg",
+      "score": 0.11725929379463196
+    },
+    {
+      "pair_id": 2859,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/003/Fabricio_Oberto_0001.jpg",
+      "image_b": "images/011/Rudi_Voeller_0001.jpg",
+      "score": -0.03444237634539604
+    },
+    {
+      "pair_id": 2951,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/007/Joy_Lee_Sadler_0001.jpg",
+      "image_b": "images/011/Stephanie_Moore_0001.jpg",
+      "score": -0.05404065176844597
+    },
+    {
+      "pair_id": 5564,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/006/Jon_Gruden_0003.jpg",
+      "image_b": "images/006/Jon_Gruden_0007.jpg",
+      "score": 0.6517921090126038
+    },
+    {
+      "pair_id": 3211,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/009/Nan_Wang_0003.jpg",
+      "image_b": "images/009/Nan_Wang_0004.jpg",
+      "score": 0.6811162829399109
+    },
+    {
+      "pair_id": 2873,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/004/Gina_Gershon_0001.jpg",
+      "image_b": "images/013/Zhang_Ziyi_0002.jpg",
+      "score": -0.04190507158637047
+    },
+    {
+      "pair_id": 2069,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/012/Tony_Curtis_0001.jpg",
+      "image_b": "images/012/Tony_Curtis_0002.jpg",
+      "score": 0.674165666103363
+    },
+    {
+      "pair_id": 4800,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/000/Adrian_McPherson_0001.jpg",
+      "image_b": "images/000/Adrian_McPherson_0002.jpg",
+      "score": 0.6519249677658081
+    },
+    {
+      "pair_id": 5804,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/002/Columba_Bush_0001.jpg",
+      "image_b": "images/009/Neil_Goldman_0001.jpg",
+      "score": -0.03402511030435562
+    },
+    {
+      "pair_id": 2683,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/012/Uma_Thurman_0001.jpg",
+      "image_b": "images/012/Uma_Thurman_0003.jpg",
+      "score": 0.6401621103286743
+    },
+    {
+      "pair_id": 3309,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/000/Ain_Seppik_0001.jpg",
+      "image_b": "images/011/Susan_Whelan_0001.jpg",
+      "score": 0.011291355825960636
+    },
+    {
+      "pair_id": 1553,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/001/Barry_Bonds_0001.jpg",
+      "image_b": "images/005/James_Barksdale_0001.jpg",
+      "score": 0.05112510174512863
+    },
+    {
+      "pair_id": 3121,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/005/Hun_Sen_0002.jpg",
+      "image_b": "images/005/Hun_Sen_0004.jpg",
+      "score": 0.6030515432357788
+    },
+    {
+      "pair_id": 4134,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/007/Leslie_Caldwell_0002.jpg",
+      "image_b": "images/012/Turner_Stevenson_0001.jpg",
+      "score": -0.10393912345170975
+    },
+    {
+      "pair_id": 2621,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/010/Phan_Van_Khai_0001.jpg",
+      "image_b": "images/010/Phan_Van_Khai_0003.jpg",
+      "score": 0.76412034034729
+    },
+    {
+      "pair_id": 1352,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/007/Kirk_Ferentz_0001.jpg",
+      "image_b": "images/007/Kirk_Ferentz_0002.jpg",
+      "score": 0.558390736579895
+    },
+    {
+      "pair_id": 281,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/012/Vaclav_Havel_0004.jpg",
+      "image_b": "images/012/Vaclav_Havel_0009.jpg",
+      "score": 0.7758018970489502
+    },
+    {
+      "pair_id": 3407,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/002/Cruz_Bustamante_0002.jpg",
+      "image_b": "images/002/Dean_Barkley_0003.jpg",
+      "score": -0.013603541068732738
+    },
+    {
+      "pair_id": 2680,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/012/Tom_Brady_0001.jpg",
+      "image_b": "images/012/Tom_Brady_0002.jpg",
+      "score": 0.5042880773544312
+    },
+    {
+      "pair_id": 2215,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/002/David_McCullough_0001.jpg",
+      "image_b": "images/003/Evo_Morales_0001.jpg",
+      "score": -0.04603084921836853
+    },
+    {
+      "pair_id": 4901,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/003/Gary_Carter_0001.jpg",
+      "image_b": "images/003/Gary_Carter_0003.jpg",
+      "score": 0.6589655876159668
+    },
+    {
+      "pair_id": 971,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/001/Catherine_Zeta-Jones_0011.jpg",
+      "image_b": "images/005/Hayley_Tullett_0002.jpg",
+      "score": 0.013967514038085938
+    },
+    {
+      "pair_id": 680,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/002/Dianne_Feinstein_0001.jpg",
+      "image_b": "images/002/Dianne_Feinstein_0003.jpg",
+      "score": 0.7327636480331421
+    },
+    {
+      "pair_id": 4841,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/001/Bulent_Ecevit_0001.jpg",
+      "image_b": "images/001/Bulent_Ecevit_0004.jpg",
+      "score": 0.7598170042037964
+    },
+    {
+      "pair_id": 3176,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/008/Mahmoud_Abbas_0007.jpg",
+      "image_b": "images/008/Mahmoud_Abbas_0011.jpg",
+      "score": 0.6706624627113342
+    },
+    {
+      "pair_id": 2429,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/001/Ben_Affleck_0005.jpg",
+      "image_b": "images/001/Ben_Affleck_0006.jpg",
+      "score": 0.6596150398254395
+    },
+    {
+      "pair_id": 1066,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/004/Ghassan_Elashi_0001.jpg",
+      "image_b": "images/010/Rick_Rickert_0001.jpg",
+      "score": -0.06316110491752625
+    },
+    {
+      "pair_id": 177,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/008/Lleyton_Hewitt_0018.jpg",
+      "image_b": "images/008/Lleyton_Hewitt_0037.jpg",
+      "score": 0.655761182308197
+    },
+    {
+      "pair_id": 2919,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/005/Jason_Clermont_0001.jpg",
+      "image_b": "images/009/Patty_Duke_0001.jpg",
+      "score": -0.056124743074178696
+    },
+    {
+      "pair_id": 3757,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/007/Li_Zhaoxing_0002.jpg",
+      "image_b": "images/007/Li_Zhaoxing_0007.jpg",
+      "score": 0.7924230098724365
+    },
+    {
+      "pair_id": 4618,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/002/Denise_Johnson_0002.jpg",
+      "image_b": "images/003/Emanuel_Ginobili_0003.jpg",
+      "score": 0.024227505549788475
+    },
+    {
+      "pair_id": 5480,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/002/Dexter_Jackson_0001.jpg",
+      "image_b": "images/002/Dexter_Jackson_0002.jpg",
+      "score": 0.699960470199585
+    },
+    {
+      "pair_id": 3225,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/009/Padraig_Harrington_0001.jpg",
+      "image_b": "images/009/Padraig_Harrington_0003.jpg",
+      "score": 0.6473947763442993
+    },
+    {
+      "pair_id": 1132,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/007/Kim_Weeks_0001.jpg",
+      "image_b": "images/008/Marie-Josee_Croze_0001.jpg",
+      "score": 0.06531912088394165
+    },
+    {
+      "pair_id": 48,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/003/Doris_Roberts_0001.jpg",
+      "image_b": "images/003/Doris_Roberts_0002.jpg",
+      "score": 0.749725878238678
+    },
+    {
+      "pair_id": 3459,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/003/Frank_Murkowski_0001.jpg",
+      "image_b": "images/005/James_Brosnahan_0001.jpg",
+      "score": 0.01218625158071518
+    },
+    {
+      "pair_id": 324,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/000/Andrew_Shutley_0001.jpg",
+      "image_b": "images/003/Edmund_Stoiber_0005.jpg",
+      "score": -0.12892261147499084
+    },
+    {
+      "pair_id": 524,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/006/John_Herrington_0001.jpg",
+      "image_b": "images/008/Luis_Ernesto_Derbez_Bautista_0002.jpg",
+      "score": 0.029934938997030258
+    },
+    {
+      "pair_id": 5268,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/004/Gong_Ruina_0001.jpg",
+      "image_b": "images/005/Hong_Myung_0001.jpg",
+      "score": -0.13436752557754517
+    },
+    {
+      "pair_id": 5040,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/010/Ranil_Wickremasinghe_0002.jpg",
+      "image_b": "images/010/Ranil_Wickremasinghe_0003.jpg",
+      "score": 0.601150631904602
+    },
+    {
+      "pair_id": 1858,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/002/Colin_Powell_0049.jpg",
+      "image_b": "images/002/Colin_Powell_0234.jpg",
+      "score": 0.7315655946731567
+    },
+    {
+      "pair_id": 4280,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/004/Gregory_Geoffroy_0001.jpg",
+      "image_b": "images/004/Gregory_Geoffroy_0002.jpg",
+      "score": 0.7975549101829529
+    },
+    {
+      "pair_id": 2214,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/002/David_Chase_0001.jpg",
+      "image_b": "images/003/Ekaterina_Dmitriev_0001.jpg",
+      "score": -0.029976464807987213
+    },
+    {
+      "pair_id": 389,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/001/Casey_Mears_0001.jpg",
+      "image_b": "images/013/Yukiko_Okudo_0001.jpg",
+      "score": 0.015226485207676888
+    },
+    {
+      "pair_id": 29,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/001/Boris_Becker_0002.jpg",
+      "image_b": "images/001/Boris_Becker_0006.jpg",
+      "score": 0.669840931892395
+    },
+    {
+      "pair_id": 1575,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/001/Cari_Davis_0001.jpg",
+      "image_b": "images/002/Don_Henley_0001.jpg",
+      "score": -0.023415207862854004
+    },
+    {
+      "pair_id": 4707,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/006/John_Kerry_0009.jpg",
+      "image_b": "images/010/Raja_Ibrahim_0001.jpg",
+      "score": -0.02382863126695156
+    },
+    {
+      "pair_id": 4797,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/011/Takeo_Hiranuma_0001.jpg",
+      "image_b": "images/012/Ty_Votaw_0001.jpg",
+      "score": 0.023243770003318787
+    },
+    {
+      "pair_id": 1665,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/003/Gavyn_Arthur_0001.jpg",
+      "image_b": "images/013/Zahir_Shah_0001.jpg",
+      "score": -0.008369283750653267
+    },
+    {
+      "pair_id": 703,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/003/Fujio_Cho_0004.jpg",
+      "image_b": "images/003/Fujio_Cho_0006.jpg",
+      "score": 0.7582265138626099
+    },
+    {
+      "pair_id": 4473,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/011/Steve_Nash_0001.jpg",
+      "image_b": "images/011/Steve_Nash_0004.jpg",
+      "score": 0.6792349815368652
+    },
+    {
+      "pair_id": 1636,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/003/Donald_Regan_0001.jpg",
+      "image_b": "images/006/John_Gruden_0001.jpg",
+      "score": -0.06458641588687897
+    },
+    {
+      "pair_id": 5141,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/000/Ascencion_Barajas_0001.jpg",
+      "image_b": "images/002/Chris_Hernandez_0001.jpg",
+      "score": 0.015766624361276627
+    },
+    {
+      "pair_id": 4030,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/003/Elsa_Zylberstein_0002.jpg",
+      "image_b": "images/008/Matt_Braker_0001.jpg",
+      "score": -0.06659446656703949
+    },
+    {
+      "pair_id": 2311,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/005/Janet_Crawford_0001.jpg",
+      "image_b": "images/012/Thomas_Scavone_0001.jpg",
+      "score": -0.04306257516145706
+    },
+    {
+      "pair_id": 803,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/009/Mohammad_Khatami_0008.jpg",
+      "image_b": "images/009/Mohammad_Khatami_0010.jpg",
+      "score": 0.6263394355773926
+    },
+    {
+      "pair_id": 717,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/005/Hanan_Ashrawi_0001.jpg",
+      "image_b": "images/005/Hanan_Ashrawi_0002.jpg",
+      "score": 0.7220343947410583
+    },
+    {
+      "pair_id": 3018,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/000/Angelo_Reyes_0001.jpg",
+      "image_b": "images/000/Angelo_Reyes_0002.jpg",
+      "score": 0.7896695733070374
+    },
+    {
+      "pair_id": 5123,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/000/Ana_Sebastiao_0001.jpg",
+      "image_b": "images/010/Raza_Rabbani_0001.jpg",
+      "score": -0.05073173716664314
+    },
+    {
+      "pair_id": 2325,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/006/John_Franco_0001.jpg",
+      "image_b": "images/010/Paul_Wolfowitz_0004.jpg",
+      "score": -0.01364380307495594
+    },
+    {
+      "pair_id": 513,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/006/Jennifer_Garner_0006.jpg",
+      "image_b": "images/009/Mike_Duke_0001.jpg",
+      "score": -0.0799446702003479
+    },
+    {
+      "pair_id": 1171,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/009/Mike_Eskew_0001.jpg",
+      "image_b": "images/013/Zarai_Toledo_0001.jpg",
+      "score": -0.017261255532503128
+    },
+    {
+      "pair_id": 4888,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/003/Erika_Harold_0001.jpg",
+      "image_b": "images/003/Erika_Harold_0003.jpg",
+      "score": 0.6264116764068604
+    },
+    {
+      "pair_id": 3736,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/006/Jose_Dirceu_0001.jpg",
+      "image_b": "images/006/Jose_Dirceu_0002.jpg",
+      "score": 0.6402897834777832
+    },
+    {
+      "pair_id": 3104,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/005/Hans_Blix_0007.jpg",
+      "image_b": "images/005/Hans_Blix_0008.jpg",
+      "score": 0.6286841630935669
+    },
+    {
+      "pair_id": 4249,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/002/Demetrius_Ferraciu_0001.jpg",
+      "image_b": "images/002/Demetrius_Ferraciu_0002.jpg",
+      "score": 0.5831596851348877
+    },
+    {
+      "pair_id": 3354,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/001/Benicio_Del_Toro_0001.jpg",
+      "image_b": "images/005/Ismail_Khan_0001.jpg",
+      "score": 0.03343673795461655
+    },
+    {
+      "pair_id": 2171,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/001/Brooke_Adams_0001.jpg",
+      "image_b": "images/010/Paula_Prentiss_0001.jpg",
+      "score": 0.056832119822502136
+    },
+    {
+      "pair_id": 435,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/003/Douglas_Gansler_0001.jpg",
+      "image_b": "images/011/Ronald_Kadish_0001.jpg",
+      "score": 0.08700987696647644
+    },
+    {
+      "pair_id": 4418,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/009/Nicholas_Byron_0001.jpg",
+      "image_b": "images/009/Nicholas_Byron_0002.jpg",
+      "score": 0.7790526151657104
+    },
+    {
+      "pair_id": 3262,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/011/Sean_OKeefe_0003.jpg",
+      "image_b": "images/011/Sean_OKeefe_0004.jpg",
+      "score": 0.7744698524475098
+    },
+    {
+      "pair_id": 4967,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/007/Klaus_Zwickel_0001.jpg",
+      "image_b": "images/007/Klaus_Zwickel_0002.jpg",
+      "score": 0.8132892847061157
+    },
+    {
+      "pair_id": 1765,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/008/Masamori_Tokuyama_0001.jpg",
+      "image_b": "images/010/Regina_Ip_0001.jpg",
+      "score": 0.07982385158538818
+    },
+    {
+      "pair_id": 3259,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/011/Scott_Peterson_0002.jpg",
+      "image_b": "images/011/Scott_Peterson_0005.jpg",
+      "score": 0.5996509790420532
+    },
+    {
+      "pair_id": 2815,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/002/Conan_OBrien_0001.jpg",
+      "image_b": "images/008/Liliana_Cavani_0001.jpg",
+      "score": 0.048144467175006866
+    },
+    {
+      "pair_id": 2624,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/010/Prince_Claus_0002.jpg",
+      "image_b": "images/010/Prince_Claus_0003.jpg",
+      "score": 0.7285239100456238
+    },
+    {
+      "pair_id": 1335,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/007/Joseph_Biden_0001.jpg",
+      "image_b": "images/007/Joseph_Biden_0004.jpg",
+      "score": 0.6489019393920898
+    },
+    {
+      "pair_id": 1501,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/000/Abdullah_0001.jpg",
+      "image_b": "images/012/Teresa_Heinz_Kerry_0001.jpg",
+      "score": 0.10350672900676727
+    },
+    {
+      "pair_id": 5963,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/008/Michael_J_Fox_0001.jpg",
+      "image_b": "images/012/Thomas_Daily_0001.jpg",
+      "score": -0.07852542400360107
+    },
+    {
+      "pair_id": 1743,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/007/Lee_Ann_Terlaji_0001.jpg",
+      "image_b": "images/011/Roman_Coppola_0001.jpg",
+      "score": -0.0803404301404953
+    },
+    {
+      "pair_id": 1675,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/004/Gisele_Bundchen_0002.jpg",
+      "image_b": "images/010/Penny_Lancaster_0001.jpg",
+      "score": 0.01906278356909752
+    },
+    {
+      "pair_id": 414,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/002/Darvis_Patton_0001.jpg",
+      "image_b": "images/004/Gerard_Tronche_0001.jpg",
+      "score": -0.0658435970544815
+    },
+    {
+      "pair_id": 319,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/000/Amporn_Falise_0001.jpg",
+      "image_b": "images/006/Joe_Pantoliano_0001.jpg",
+      "score": -0.08497767150402069
+    },
+    {
+      "pair_id": 383,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/001/Carl_Reiner_0002.jpg",
+      "image_b": "images/012/Tom_Glavine_0002.jpg",
+      "score": 0.0017805201932787895
+    },
+    {
+      "pair_id": 5081,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/012/Tracy_McGrady_0001.jpg",
+      "image_b": "images/012/Tracy_McGrady_0002.jpg",
+      "score": 0.5750941634178162
+    },
+    {
+      "pair_id": 4051,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/003/George_Gregan_0001.jpg",
+      "image_b": "images/006/John_Negroponte_0027.jpg",
+      "score": -0.013957295566797256
+    },
+    {
+      "pair_id": 5365,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/008/Mark_Polansky_0001.jpg",
+      "image_b": "images/009/Miranda_Gaddis_0001.jpg",
+      "score": 0.08316726982593536
+    },
+    {
+      "pair_id": 5453,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/001/Cecilia_Bolocco_0001.jpg",
+      "image_b": "images/001/Cecilia_Bolocco_0002.jpg",
+      "score": 0.6534211039543152
+    },
+    {
+      "pair_id": 5278,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/005/Ismail_Cem_0001.jpg",
+      "image_b": "images/008/Linda_Amicangioli_0001.jpg",
+      "score": 0.04314912483096123
+    },
+    {
+      "pair_id": 1486,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/012/Vidar_Helgesen_0001.jpg",
+      "image_b": "images/012/Vidar_Helgesen_0002.jpg",
+      "score": 0.572821855545044
+    },
+    {
+      "pair_id": 5243,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/003/Edward_Said_0001.jpg",
+      "image_b": "images/003/Frank_Abagnale_Jr_0001.jpg",
+      "score": -0.023467442020773888
+    },
+    {
+      "pair_id": 4003,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/002/Dennis_Kucinich_0006.jpg",
+      "image_b": "images/005/Iain_Anderson_0001.jpg",
+      "score": 0.007735569030046463
+    },
+    {
+      "pair_id": 3460,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/003/Frank_Stallone_0001.jpg",
+      "image_b": "images/012/Tommy_Lewis_0001.jpg",
+      "score": 0.08196353167295456
+    },
+    {
+      "pair_id": 5960,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/008/Melana_Scantlin_0001.jpg",
+      "image_b": "images/013/William_Ragland_0001.jpg",
+      "score": 0.005045164376497269
+    },
+    {
+      "pair_id": 2924,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/006/Jennifer_McCoy_0001.jpg",
+      "image_b": "images/012/William_Cocksedge_0001.jpg",
+      "score": 0.012142488732933998
+    },
+    {
+      "pair_id": 5562,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/006/Jon_Gruden_0002.jpg",
+      "image_b": "images/006/Jon_Gruden_0005.jpg",
+      "score": 0.7209405899047852
+    },
+    {
+      "pair_id": 4803,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/000/Al_Gore_0004.jpg",
+      "image_b": "images/000/Al_Gore_0006.jpg",
+      "score": 0.6940960884094238
+    },
+    {
+      "pair_id": 599,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/012/Tina_Fey_0001.jpg",
+      "image_b": "images/012/Todd_Parrott_0001.jpg",
+      "score": -0.05870724469423294
+    },
+    {
+      "pair_id": 1692,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/005/Ivan_Lee_0001.jpg",
+      "image_b": "images/006/Jennifer_Furminger_0001.jpg",
+      "score": -0.006266249343752861
+    },
+    {
+      "pair_id": 839,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/011/Sandra_Bullock_0002.jpg",
+      "image_b": "images/011/Sandra_Bullock_0004.jpg",
+      "score": 0.6012296676635742
+    },
+    {
+      "pair_id": 4857,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/001/Cate_Blanchett_0002.jpg",
+      "image_b": "images/001/Cate_Blanchett_0003.jpg",
+      "score": 0.6158786416053772
+    },
+    {
+      "pair_id": 3124,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/005/Iain_Duncan_Smith_0002.jpg",
+      "image_b": "images/005/Iain_Duncan_Smith_0004.jpg",
+      "score": 0.7667296528816223
+    },
+    {
+      "pair_id": 337,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/000/Anwar_Ibrahim_0001.jpg",
+      "image_b": "images/002/David_Alpay_0001.jpg",
+      "score": -0.056937310844659805
+    },
+    {
+      "pair_id": 5701,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/000/Aaron_Tippin_0001.jpg",
+      "image_b": "images/007/Juan_Carlos_Ortega_0001.jpg",
+      "score": 0.02826680801808834
+    },
+    {
+      "pair_id": 5337,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/007/Krishna_Bhadur_Mahara_0001.jpg",
+      "image_b": "images/010/Peter_Holmberg_0001.jpg",
+      "score": -0.0956113338470459
+    },
+    {
+      "pair_id": 3857,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/011/Sergei_Ivanov_0001.jpg",
+      "image_b": "images/011/Sergei_Ivanov_0003.jpg",
+      "score": 0.5096895694732666
+    },
+    {
+      "pair_id": 1856,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/002/Clay_Aiken_0003.jpg",
+      "image_b": "images/002/Clay_Aiken_0005.jpg",
+      "score": 0.6548973917961121
+    },
+    {
+      "pair_id": 3479,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/005/Hans_Eichel_0001.jpg",
+      "image_b": "images/006/Jimmy_Iovine_0001.jpg",
+      "score": -0.07207366824150085
+    },
+    {
+      "pair_id": 290,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/012/Vitali_Klitschko_0001.jpg",
+      "image_b": "images/012/Vitali_Klitschko_0002.jpg",
+      "score": 0.5461820363998413
+    },
+    {
+      "pair_id": 2377,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/009/Mitt_Romney_0001.jpg",
+      "image_b": "images/009/Nida_Blanca_0001.jpg",
+      "score": 0.02734486386179924
+    },
+    {
+      "pair_id": 5494,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/003/George_Karl_0001.jpg",
+      "image_b": "images/003/George_Karl_0002.jpg",
+      "score": 0.6346991062164307
+    },
+    {
+      "pair_id": 5159,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/001/Billy_Gilman_0001.jpg",
+      "image_b": "images/005/Howard_Smith_0002.jpg",
+      "score": 0.02337050437927246
+    },
+    {
+      "pair_id": 3570,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/009/Nathirah_Hussein_0001.jpg",
+      "image_b": "images/011/Susan_Whelan_0001.jpg",
+      "score": 0.012952283956110477
+    },
+    {
+      "pair_id": 2140,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/001/Asif_Hanif_0001.jpg",
+      "image_b": "images/010/Robbie_Williams_0001.jpg",
+      "score": -0.08472460508346558
+    },
+    {
+      "pair_id": 4160,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/008/Michael_Bolton_0001.jpg",
+      "image_b": "images/010/Robert_Bullock_0002.jpg",
+      "score": 0.006108732894062996
+    },
+    {
+      "pair_id": 4738,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/007/Kyle_McLaren_0001.jpg",
+      "image_b": "images/012/Will_Ofenheusle_0001.jpg",
+      "score": 0.07568247616291046
+    },
+    {
+      "pair_id": 3180,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/008/Mark_Richt_0001.jpg",
+      "image_b": "images/008/Mark_Richt_0003.jpg",
+      "score": 0.6823220252990723
+    },
+    {
+      "pair_id": 5778,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/001/Bob_Beauprez_0002.jpg",
+      "image_b": "images/006/John_Norquist_0001.jpg",
+      "score": 0.072646364569664
+    },
+    {
+      "pair_id": 5979,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/009/Patrick_Clawsen_0001.jpg",
+      "image_b": "images/011/Sandra_Banning_0001.jpg",
+      "score": 0.009781651198863983
+    },
+    {
+      "pair_id": 666,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/002/Daniel_Radcliffe_0001.jpg",
+      "image_b": "images/002/Daniel_Radcliffe_0004.jpg",
+      "score": 0.6613403558731079
+    },
+    {
+      "pair_id": 5895,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/005/Jason_Lezak_0001.jpg",
+      "image_b": "images/006/John_Bolton_0004.jpg",
+      "score": -0.04236525297164917
+    },
+    {
+      "pair_id": 4225,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/001/Cameron_Diaz_0001.jpg",
+      "image_b": "images/001/Cameron_Diaz_0003.jpg",
+      "score": 0.5639379620552063
+    },
+    {
+      "pair_id": 1850,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/002/Claudia_Pechstein_0001.jpg",
+      "image_b": "images/002/Claudia_Pechstein_0004.jpg",
+      "score": 0.702741265296936
+    },
+    {
+      "pair_id": 4067,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/004/Hal_Gehman_0001.jpg",
+      "image_b": "images/011/Scott_Yates_0001.jpg",
+      "score": -0.00750952772796154
+    },
+    {
+      "pair_id": 1693,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/005/James_Hallock_0001.jpg",
+      "image_b": "images/010/Robert_Beck_0001.jpg",
+      "score": 0.009587932378053665
+    },
+    {
+      "pair_id": 214,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/009/Paul_Sarbanes_0001.jpg",
+      "image_b": "images/009/Paul_Sarbanes_0003.jpg",
+      "score": 0.6769376397132874
+    },
+    {
+      "pair_id": 3699,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/005/James_Smith_0001.jpg",
+      "image_b": "images/005/James_Smith_0002.jpg",
+      "score": 0.7754316926002502
+    },
+    {
+      "pair_id": 353,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/001/Bill_Bradley_0001.jpg",
+      "image_b": "images/001/Chen_Tsai-chin_0001.jpg",
+      "score": 0.01684427261352539
+    },
+    {
+      "pair_id": 2482,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/002/David_Myers_0001.jpg",
+      "image_b": "images/002/David_Myers_0002.jpg",
+      "score": 0.6353145837783813
+    },
+    {
+      "pair_id": 3805,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/009/Nancy_Sinatra_0001.jpg",
+      "image_b": "images/009/Nancy_Sinatra_0002.jpg",
+      "score": 0.4989839792251587
+    },
+    {
+      "pair_id": 4840,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/001/Brooke_Shields_0001.jpg",
+      "image_b": "images/001/Brooke_Shields_0002.jpg",
+      "score": 0.6897629499435425
+    },
+    {
+      "pair_id": 5142,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/000/Ashley_Judd_0001.jpg",
+      "image_b": "images/006/Joan_Jett_0001.jpg",
+      "score": -0.02411906234920025
+    },
+    {
+      "pair_id": 1522,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/000/Amy_Pascal_0001.jpg",
+      "image_b": "images/006/John_Marburger_0001.jpg",
+      "score": 0.030983179807662964
+    },
+    {
+      "pair_id": 2649,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/011/Sebastian_Saja_0001.jpg",
+      "image_b": "images/011/Sebastian_Saja_0002.jpg",
+      "score": 0.5107995271682739
+    },
+    {
+      "pair_id": 2705,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/000/Ahmed_Ibrahim_Bilal_0001.jpg",
+      "image_b": "images/007/Lee_Chang-dong_0001.jpg",
+      "score": -0.001592285931110382
+    },
+    {
+      "pair_id": 5237,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/003/Eduardo_Chillida_0001.jpg",
+      "image_b": "images/011/Stephen_Crampton_0001.jpg",
+      "score": -0.09094598889350891
+    },
+    {
+      "pair_id": 427,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/002/Dianne_Reeves_0001.jpg",
+      "image_b": "images/007/Larry_Wilmore_0001.jpg",
+      "score": 0.06077311560511589
+    },
+    {
+      "pair_id": 1440,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/010/Reggie_Miller_0001.jpg",
+      "image_b": "images/010/Reggie_Miller_0002.jpg",
+      "score": 0.7354415655136108
+    },
+    {
+      "pair_id": 4300,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/005/Jean_Charest_0001.jpg",
+      "image_b": "images/005/Jean_Charest_0010.jpg",
+      "score": 0.0723055973649025
+    },
+    {
+      "pair_id": 626,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/000/Anna_Kournikova_0002.jpg",
+      "image_b": "images/000/Anna_Kournikova_0012.jpg",
+      "score": 0.40517809987068176
+    },
+    {
+      "pair_id": 4035,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/003/Enrik_Vendt_0001.jpg",
+      "image_b": "images/007/Lane_Odom_0001.jpg",
+      "score": 0.07624773681163788
+    },
+    {
+      "pair_id": 2342,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/007/Kirk_Douglas_0001.jpg",
+      "image_b": "images/009/Nida_Blanca_0001.jpg",
+      "score": -0.008657815866172314
+    },
+    {
+      "pair_id": 1854,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/002/Clay_Aiken_0002.jpg",
+      "image_b": "images/002/Clay_Aiken_0004.jpg",
+      "score": 0.6152510643005371
+    },
+    {
+      "pair_id": 3553,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/008/Martin_ONeill_0001.jpg",
+      "image_b": "images/009/Mike_Weir_0011.jpg",
+      "score": 0.016734879463911057
+    },
+    {
+      "pair_id": 1434,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/010/Pete_Rose_0001.jpg",
+      "image_b": "images/010/Pete_Rose_0002.jpg",
+      "score": 0.5511520504951477
+    },
+    {
+      "pair_id": 4363,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/008/Lindsay_Benko_0001.jpg",
+      "image_b": "images/008/Lindsay_Benko_0002.jpg",
+      "score": 0.6656571626663208
+    },
+    {
+      "pair_id": 1166,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/008/Melissa_Joan_Hart_0001.jpg",
+      "image_b": "images/009/Mikhail_Kalashnikov_0001.jpg",
+      "score": -0.16820001602172852
+    },
+    {
+      "pair_id": 1874,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/003/Elizabeth_Hurley_0002.jpg",
+      "image_b": "images/003/Elizabeth_Hurley_0005.jpg",
+      "score": 0.5871955752372742
+    },
+    {
+      "pair_id": 345,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/001/Bart_Freundlich_0001.jpg",
+      "image_b": "images/003/Ernie_Grunfeld_0001.jpg",
+      "score": -0.04497785493731499
+    },
+    {
+      "pair_id": 2450,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/001/Carlos_Ghosn_0001.jpg",
+      "image_b": "images/001/Carlos_Ghosn_0002.jpg",
+      "score": 0.819678544998169
+    },
+    {
+      "pair_id": 7,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/000/Angela_Bassett_0002.jpg",
+      "image_b": "images/000/Angela_Bassett_0005.jpg",
+      "score": 0.5416682958602905
+    },
+    {
+      "pair_id": 5738,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/000/Andy_Perez_0001.jpg",
+      "image_b": "images/011/Stephen_Joseph_0001.jpg",
+      "score": 0.024612918496131897
+    },
+    {
+      "pair_id": 5393,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/010/Quin_Snyder_0001.jpg",
+      "image_b": "images/012/Vagit_Alekperov_0001.jpg",
+      "score": -0.04315462335944176
+    },
+    {
+      "pair_id": 2076,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/012/Vanessa_Redgrave_0001.jpg",
+      "image_b": "images/012/Vanessa_Redgrave_0004.jpg",
+      "score": 0.6172022819519043
+    },
+    {
+      "pair_id": 3393,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/002/Christine_Ebersole_0002.jpg",
+      "image_b": "images/010/Paul_Walker_0001.jpg",
+      "score": -0.035369403660297394
+    },
+    {
+      "pair_id": 2265,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/003/Francisco_Flores_0004.jpg",
+      "image_b": "images/005/Hisham_Halawi_0001.jpg",
+      "score": -0.08599863946437836
+    },
+    {
+      "pair_id": 2168,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/001/Brian_McIntyre_0001.jpg",
+      "image_b": "images/009/Mohammed_Abulhasan_0001.jpg",
+      "score": -0.098726786673069
+    },
+    {
+      "pair_id": 690,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/003/Erik_Morales_0001.jpg",
+      "image_b": "images/003/Erik_Morales_0002.jpg",
+      "score": 0.6783204078674316
+    },
+    {
+      "pair_id": 3597,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/011/Tammy_Helm_0001.jpg",
+      "image_b": "images/012/Tom_Smothers_0001.jpg",
+      "score": -0.07701841741800308
+    },
+    {
+      "pair_id": 3169,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/007/Lauren_Killian_0001.jpg",
+      "image_b": "images/007/Lauren_Killian_0002.jpg",
+      "score": 0.7229719161987305
+    },
+    {
+      "pair_id": 3114,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/005/Heath_Ledger_0002.jpg",
+      "image_b": "images/005/Heath_Ledger_0003.jpg",
+      "score": 0.6651126742362976
+    },
+    {
+      "pair_id": 4864,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/002/Christine_Gregoire_0002.jpg",
+      "image_b": "images/002/Christine_Gregoire_0003.jpg",
+      "score": 0.6986969709396362
+    },
+    {
+      "pair_id": 2031,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/010/Prince_Willem-Alexander_0001.jpg",
+      "image_b": "images/010/Prince_Willem-Alexander_0003.jpg",
+      "score": 0.6382193565368652
+    },
+    {
+      "pair_id": 1987,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/009/Mohamed_ElBaradei_0002.jpg",
+      "image_b": "images/009/Mohamed_ElBaradei_0004.jpg",
+      "score": 0.7539450526237488
+    },
+    {
+      "pair_id": 4501,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/000/Aaron_Eckhart_0001.jpg",
+      "image_b": "images/000/AnFernce_Negron_0001.jpg",
+      "score": -0.022694475948810577
+    },
+    {
+      "pair_id": 2693,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/012/Vladimir_Spidla_0001.jpg",
+      "image_b": "images/012/Vladimir_Spidla_0002.jpg",
+      "score": 0.7824842929840088
+    },
+    {
+      "pair_id": 4723,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/007/Julianne_Moore_0004.jpg",
+      "image_b": "images/011/Shia_LaBeouf_0001.jpg",
+      "score": 0.02717457339167595
+    },
+    {
+      "pair_id": 4980,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/007/Liam_Neeson_0002.jpg",
+      "image_b": "images/007/Liam_Neeson_0003.jpg",
+      "score": 0.5678464770317078
+    },
+    {
+      "pair_id": 5152,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/001/Benazir_Bhutto_0004.jpg",
+      "image_b": "images/005/Jane_Pauley_0002.jpg",
+      "score": -0.04394509643316269
+    },
+    {
+      "pair_id": 2931,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/006/Joel_Todd_0001.jpg",
+      "image_b": "images/006/John_Fox_0001.jpg",
+      "score": 0.014887820929288864
+    },
+    {
+      "pair_id": 201,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/009/Nora_Bendijo_0001.jpg",
+      "image_b": "images/009/Nora_Bendijo_0002.jpg",
+      "score": 0.24593977630138397
+    },
+    {
+      "pair_id": 2438,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/001/Bono_0002.jpg",
+      "image_b": "images/001/Bono_0003.jpg",
+      "score": 0.46852564811706543
+    },
+    {
+      "pair_id": 1276,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/003/George_HW_Bush_0005.jpg",
+      "image_b": "images/003/George_HW_Bush_0008.jpg",
+      "score": 0.7179731726646423
+    },
+    {
+      "pair_id": 2681,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/012/Toshihiko_Fukui_0001.jpg",
+      "image_b": "images/012/Toshihiko_Fukui_0002.jpg",
+      "score": 0.8389711380004883
+    },
+    {
+      "pair_id": 5864,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/004/Greg_Rusedski_0003.jpg",
+      "image_b": "images/005/Javier_Bardem_0001.jpg",
+      "score": -0.04903046414256096
+    },
+    {
+      "pair_id": 1923,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/006/John_Paul_II_0002.jpg",
+      "image_b": "images/006/John_Paul_II_0005.jpg",
+      "score": 0.5356465578079224
+    },
+    {
+      "pair_id": 3681,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/005/Hannah_Stockbauer_0001.jpg",
+      "image_b": "images/005/Hannah_Stockbauer_0002.jpg",
+      "score": 0.8425535559654236
+    },
+    {
+      "pair_id": 2558,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/006/John_Edwards_0004.jpg",
+      "image_b": "images/006/John_Edwards_0006.jpg",
+      "score": 0.6543960571289062
+    },
+    {
+      "pair_id": 1266,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/003/Eva_Dimas_0001.jpg",
+      "image_b": "images/003/Eva_Dimas_0002.jpg",
+      "score": 0.6789162158966064
+    },
+    {
+      "pair_id": 5877,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/005/Herman_Edwards_0001.jpg",
+      "image_b": "images/009/Patrick_Eaves_0001.jpg",
+      "score": -0.0588073655962944
+    },
+    {
+      "pair_id": 4282,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/004/Guillermo_Coria_0019.jpg",
+      "image_b": "images/004/Guillermo_Coria_0022.jpg",
+      "score": 0.6287331581115723
+    },
+    {
+      "pair_id": 921,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/000/Andy_Bryant_0001.jpg",
+      "image_b": "images/009/Mike_Slive_0001.jpg",
+      "score": 0.0353538915514946
+    },
+    {
+      "pair_id": 4174,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/010/Pedro_Pauleta_0001.jpg",
+      "image_b": "images/012/Tommy_Franks_0014.jpg",
+      "score": 0.0019123218953609467
+    },
+    {
+      "pair_id": 2593,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/008/Michael_Phelps_0002.jpg",
+      "image_b": "images/008/Michael_Phelps_0004.jpg",
+      "score": 0.6996912956237793
+    },
+    {
+      "pair_id": 1187,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/010/Richard_Sterner_0001.jpg",
+      "image_b": "images/011/Steven_Spielberg_0002.jpg",
+      "score": 0.006053680554032326
+    },
+    {
+      "pair_id": 2175,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/001/Bustam_A_Zedan_Aljanabi_0001.jpg",
+      "image_b": "images/007/Kajsa_Bergqvist_0001.jpg",
+      "score": -0.0038612764328718185
+    },
+    {
+      "pair_id": 5944,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/008/Lou_Lang_0001.jpg",
+      "image_b": "images/009/Nova_Esther_Guthrie_0001.jpg",
+      "score": -0.07691551744937897
+    },
+    {
+      "pair_id": 442,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/003/Eliza_Dushku_0001.jpg",
+      "image_b": "images/005/Itzhak_Perlman_0001.jpg",
+      "score": -0.06601622700691223
+    },
+    {
+      "pair_id": 3516,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/006/Jose_Luis_Rodriguez_Zapatero_0001.jpg",
+      "image_b": "images/010/Rene_Antonio_Leon_Rodriguez_0001.jpg",
+      "score": -0.008209869265556335
+    },
+    {
+      "pair_id": 3202,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/009/Mikhail_Kasyanov_0001.jpg",
+      "image_b": "images/009/Mikhail_Kasyanov_0002.jpg",
+      "score": 0.7606030702590942
+    },
+    {
+      "pair_id": 3007,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/000/Alejandro_Toledo_0021.jpg",
+      "image_b": "images/000/Alejandro_Toledo_0024.jpg",
+      "score": 0.7441359758377075
+    },
+    {
+      "pair_id": 1483,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/012/Tung_Chee-hwa_0001.jpg",
+      "image_b": "images/012/Tung_Chee-hwa_0002.jpg",
+      "score": 0.720974326133728
+    },
+    {
+      "pair_id": 3215,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/009/Naoto_Kan_0002.jpg",
+      "image_b": "images/009/Naoto_Kan_0003.jpg",
+      "score": 0.9141159653663635
+    },
+    {
+      "pair_id": 3360,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/001/Bob_Colvin_0002.jpg",
+      "image_b": "images/005/Janet_Napolitano_0001.jpg",
+      "score": 0.03697650134563446
+    },
+    {
+      "pair_id": 3112,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/005/Heath_Ledger_0001.jpg",
+      "image_b": "images/005/Heath_Ledger_0002.jpg",
+      "score": 0.55069899559021
+    },
+    {
+      "pair_id": 2148,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/001/Bill_Readdy_0001.jpg",
+      "image_b": "images/001/Brendan_Gaughan_0001.jpg",
+      "score": 0.01895458623766899
+    },
+    {
+      "pair_id": 5573,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/007/Kimi_Raikkonen_0002.jpg",
+      "image_b": "images/007/Kimi_Raikkonen_0003.jpg",
+      "score": 0.504062831401825
+    },
+    {
+      "pair_id": 3589,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/010/Robin_Cook_0001.jpg",
+      "image_b": "images/013/Wilton_Gregory_0001.jpg",
+      "score": 0.06323721259832382
+    },
+    {
+      "pair_id": 3352,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/001/Ben_Curtis_0003.jpg",
+      "image_b": "images/006/Jim_Calhoun_0001.jpg",
+      "score": -0.06454671174287796
+    },
+    {
+      "pair_id": 775,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/007/Kenneth_Branagh_0001.jpg",
+      "image_b": "images/007/Kenneth_Branagh_0002.jpg",
+      "score": 0.8256161212921143
+    },
+    {
+      "pair_id": 326,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/000/Andrew_Shutley_0001.jpg",
+      "image_b": "images/011/Saeb_Erekat_0002.jpg",
+      "score": 0.03782230615615845
+    },
+    {
+      "pair_id": 3092,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/004/Gerhard_Schroeder_0045.jpg",
+      "image_b": "images/004/Gerhard_Schroeder_0067.jpg",
+      "score": 0.7030571699142456
+    },
+    {
+      "pair_id": 960,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/001/Bryan_Murray_0001.jpg",
+      "image_b": "images/009/Mikhail_Youzhny_0001.jpg",
+      "score": 0.07846814393997192
+    },
+    {
+      "pair_id": 1319,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/006/Jiri_Novak_0005.jpg",
+      "image_b": "images/006/Jiri_Novak_0011.jpg",
+      "score": 0.847516655921936
+    },
+    {
+      "pair_id": 4610,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/002/Danny_Glover_0001.jpg",
+      "image_b": "images/009/Patrice_Chereau_0002.jpg",
+      "score": -0.09462578594684601
+    },
+    {
+      "pair_id": 415,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/002/Darvis_Patton_0001.jpg",
+      "image_b": "images/012/William_Macy_0004.jpg",
+      "score": -0.007625211030244827
+    },
+    {
+      "pair_id": 2932,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/006/Joel_Todd_0001.jpg",
+      "image_b": "images/009/Momir_Nikolic_0001.jpg",
+      "score": 0.005236204247921705
+    },
+    {
+      "pair_id": 1922,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/006/John_Paul_II_0001.jpg",
+      "image_b": "images/006/John_Paul_II_0004.jpg",
+      "score": 0.42437979578971863
+    },
+    {
+      "pair_id": 1261,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/003/Eduardo_Duhalde_0010.jpg",
+      "image_b": "images/003/Eduardo_Duhalde_0012.jpg",
+      "score": 0.7335585951805115
+    },
+    {
+      "pair_id": 577,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/009/Patty_Schnyder_0003.jpg",
+      "image_b": "images/010/Prince_Philippe_0001.jpg",
+      "score": 0.005517537705600262
+    },
+    {
+      "pair_id": 3419,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/002/Deece_Eckstein_0001.jpg",
+      "image_b": "images/012/Tommy_Lewis_0001.jpg",
+      "score": 0.04958263784646988
+    },
+    {
+      "pair_id": 5041,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/010/Rick_Pitino_0001.jpg",
+      "image_b": "images/010/Rick_Pitino_0003.jpg",
+      "score": 0.6640182733535767
+    },
+    {
+      "pair_id": 1676,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/004/Giuseppe_Morchio_0001.jpg",
+      "image_b": "images/010/Penny_Lancaster_0001.jpg",
+      "score": 0.0316033661365509
+    },
+    {
+      "pair_id": 5602,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/008/Marcelo_Rios_0003.jpg",
+      "image_b": "images/008/Marcelo_Rios_0005.jpg",
+      "score": 0.723923921585083
+    },
+    {
+      "pair_id": 5433,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/001/Bertie_Ahern_0001.jpg",
+      "image_b": "images/001/Bertie_Ahern_0005.jpg",
+      "score": 0.6840656995773315
+    },
+    {
+      "pair_id": 4466,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/011/Sergey_Lavrov_0003.jpg",
+      "image_b": "images/011/Sergey_Lavrov_0007.jpg",
+      "score": 0.7737945318222046
+    },
+    {
+      "pair_id": 3760,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/008/Luis_Gonzalez_Macchi_0001.jpg",
+      "image_b": "images/008/Luis_Gonzalez_Macchi_0002.jpg",
+      "score": 0.6134153008460999
+    },
+    {
+      "pair_id": 3779,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/008/Mark_Philippoussis_0003.jpg",
+      "image_b": "images/008/Mark_Philippoussis_0011.jpg",
+      "score": 0.6085237264633179
+    },
+    {
+      "pair_id": 3265,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/011/Sebastien_Grosjean_0001.jpg",
+      "image_b": "images/011/Sebastien_Grosjean_0002.jpg",
+      "score": 0.6087703108787537
+    },
+    {
+      "pair_id": 5780,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/001/Brady_Rodgers_0001.jpg",
+      "image_b": "images/006/Jenna_Elfman_0001.jpg",
+      "score": -0.010232934728264809
+    },
+    {
+      "pair_id": 4330,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/007/Justin_Timberlake_0001.jpg",
+      "image_b": "images/007/Justin_Timberlake_0003.jpg",
+      "score": 0.6390490531921387
+    },
+    {
+      "pair_id": 5779,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/001/Bob_Hayes_0001.jpg",
+      "image_b": "images/013/Zhu_Rongji_0008.jpg",
+      "score": 0.15589898824691772
+    },
+    {
+      "pair_id": 4974,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/007/Larry_Brown_0006.jpg",
+      "image_b": "images/007/Larry_Brown_0007.jpg",
+      "score": 0.6319100856781006
+    },
+    {
+      "pair_id": 215,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/009/Paul_Sarbanes_0002.jpg",
+      "image_b": "images/009/Paul_Sarbanes_0003.jpg",
+      "score": 0.7335529327392578
+    },
+    {
+      "pair_id": 463,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/003/Fred_Thompson_0003.jpg",
+      "image_b": "images/008/Magda_Kertasz_0001.jpg",
+      "score": -0.033805303275585175
+    },
+    {
+      "pair_id": 4740,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/007/Lawrence_Foley_0001.jpg",
+      "image_b": "images/010/Rachel_Wadsworth_0001.jpg",
+      "score": -0.0975877121090889
+    },
+    {
+      "pair_id": 1699,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/005/Jaromir_Jagr_0001.jpg",
+      "image_b": "images/012/Troy_Jenkins_0001.jpg",
+      "score": -0.04105701670050621
+    },
+    {
+      "pair_id": 2091,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/013/Yasser_Arafat_0002.jpg",
+      "image_b": "images/013/Yasser_Arafat_0003.jpg",
+      "score": 0.8938820362091064
+    },
+    {
+      "pair_id": 4549,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/001/Bill_Herrion_0001.jpg",
+      "image_b": "images/003/Fernando_Valenzuela_0001.jpg",
+      "score": 0.051109522581100464
+    },
+    {
+      "pair_id": 1833,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/001/Barry_Zito_0001.jpg",
+      "image_b": "images/001/Barry_Zito_0002.jpg",
+      "score": 0.5576627254486084
+    },
+    {
+      "pair_id": 475,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/004/Gerard_de_Cortanze_0001.jpg",
+      "image_b": "images/008/Mark_Wahlberg_0001.jpg",
+      "score": 0.061754193156957626
+    },
+    {
+      "pair_id": 4992,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/008/Mel_Brooks_0001.jpg",
+      "image_b": "images/008/Mel_Brooks_0002.jpg",
+      "score": 0.5788767337799072
+    },
+    {
+      "pair_id": 5536,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/006/Jennifer_Lopez_0001.jpg",
+      "image_b": "images/006/Jennifer_Lopez_0003.jpg",
+      "score": 0.6954119205474854
+    },
+    {
+      "pair_id": 4246,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/002/David_Trimble_0001.jpg",
+      "image_b": "images/002/David_Trimble_0005.jpg",
+      "score": 0.780021071434021
+    },
+    {
+      "pair_id": 3751,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/007/Lance_Bass_0002.jpg",
+      "image_b": "images/007/Lance_Bass_0004.jpg",
+      "score": 0.6527637243270874
+    },
+    {
+      "pair_id": 1176,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/009/Nicholoas_DiMarzio_0001.jpg",
+      "image_b": "images/010/Richard_Parsons_0001.jpg",
+      "score": 0.0005655251443386078
+    },
+    {
+      "pair_id": 260,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/012/Tom_Ridge_0009.jpg",
+      "image_b": "images/012/Tom_Ridge_0026.jpg",
+      "score": 0.6652135848999023
+    },
+    {
+      "pair_id": 5959,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/008/Mel_Karmazin_0001.jpg",
+      "image_b": "images/010/Pierre_Pettigrew_0001.jpg",
+      "score": -0.005037322640419006
+    },
+    {
+      "pair_id": 5479,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/002/Debbie_Reynolds_0002.jpg",
+      "image_b": "images/002/Debbie_Reynolds_0004.jpg",
+      "score": 0.7129346132278442
+    },
+    {
+      "pair_id": 5301,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/006/Jerome_Golmard_0001.jpg",
+      "image_b": "images/007/Kristin_Chenoweth_0001.jpg",
+      "score": -0.04171719402074814
+    },
+    {
+      "pair_id": 755,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/006/Jennifer_Connelly_0003.jpg",
+      "image_b": "images/006/Jennifer_Connelly_0004.jpg",
+      "score": 0.8233882784843445
+    },
+    {
+      "pair_id": 27,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/001/Bob_Graham_0004.jpg",
+      "image_b": "images/001/Bob_Graham_0006.jpg",
+      "score": 0.6047208309173584
+    },
+    {
+      "pair_id": 1748,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/008/Lisa_Murkowski_0001.jpg",
+      "image_b": "images/011/Serge_Klarsfeld_0001.jpg",
+      "score": 0.013171607628464699
+    },
+    {
+      "pair_id": 2008,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/010/Paula_Radcliffe_0003.jpg",
+      "image_b": "images/010/Paula_Radcliffe_0005.jpg",
+      "score": 0.481138676404953
+    },
+    {
+      "pair_id": 3107,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/005/Hans_Blix_0008.jpg",
+      "image_b": "images/005/Hans_Blix_0024.jpg",
+      "score": 0.6639690399169922
+    },
+    {
+      "pair_id": 3836,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/010/Richie_Adubato_0001.jpg",
+      "image_b": "images/010/Richie_Adubato_0002.jpg",
+      "score": 0.6517041921615601
+    },
+    {
+      "pair_id": 2042,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/010/Richard_Virenque_0001.jpg",
+      "image_b": "images/010/Richard_Virenque_0007.jpg",
+      "score": 0.4481599032878876
+    },
+    {
+      "pair_id": 3294,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/013/Xanana_Gusmao_0003.jpg",
+      "image_b": "images/013/Xanana_Gusmao_0005.jpg",
+      "score": 0.5639036297798157
+    },
+    {
+      "pair_id": 586,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/010/Robert_Bonner_0002.jpg",
+      "image_b": "images/012/Vincent_Brooks_0002.jpg",
+      "score": -0.043263308703899384
+    },
+    {
+      "pair_id": 2862,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/003/Fernando_Henrique_Cardoso_0008.jpg",
+      "image_b": "images/011/Sherry_Fisher_0001.jpg",
+      "score": -0.05576372519135475
+    },
+    {
+      "pair_id": 4089,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/005/Jakob_Kellenberger_0001.jpg",
+      "image_b": "images/010/Pedro_Mahecha_0001.jpg",
+      "score": 0.010063298046588898
+    },
+    {
+      "pair_id": 1472,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/011/Taha_Yassin_Ramadan_0003.jpg",
+      "image_b": "images/011/Taha_Yassin_Ramadan_0012.jpg",
+      "score": 0.8042858839035034
+    },
+    {
+      "pair_id": 2332,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/007/Juergen_Schrempp_0001.jpg",
+      "image_b": "images/009/Mitt_Romney_0001.jpg",
+      "score": 0.11397451162338257
+    },
+    {
+      "pair_id": 2320,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/006/Jennifer_Capriati_0026.jpg",
+      "image_b": "images/011/Ruben_Wolkowyski_0001.jpg",
+      "score": -0.033664245158433914
+    },
+    {
+      "pair_id": 5563,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/006/Jon_Gruden_0003.jpg",
+      "image_b": "images/006/Jon_Gruden_0006.jpg",
+      "score": 0.6436113119125366
+    },
+    {
+      "pair_id": 131,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/006/Jodie_Foster_0001.jpg",
+      "image_b": "images/006/Jodie_Foster_0002.jpg",
+      "score": 0.5680444240570068
+    },
+    {
+      "pair_id": 5104,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/000/Abdullah_Nasseef_0001.jpg",
+      "image_b": "images/009/Oleg_Romantsev_0001.jpg",
+      "score": -0.08772185444831848
+    },
+    {
+      "pair_id": 5678,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/011/Slobodan_Milosevic_0003.jpg",
+      "image_b": "images/011/Slobodan_Milosevic_0004.jpg",
+      "score": 0.6211360692977905
+    },
+    {
+      "pair_id": 1963,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/008/Liza_Minnelli_0003.jpg",
+      "image_b": "images/008/Liza_Minnelli_0006.jpg",
+      "score": 0.7679123878479004
+    },
+    {
+      "pair_id": 2674,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/012/Tiger_Woods_0006.jpg",
+      "image_b": "images/012/Tiger_Woods_0018.jpg",
+      "score": 0.514373779296875
+    },
+    {
+      "pair_id": 5510,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/004/Greg_Rusedski_0001.jpg",
+      "image_b": "images/004/Greg_Rusedski_0002.jpg",
+      "score": 0.6250959634780884
+    },
+    {
+      "pair_id": 5867,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/004/Guillermo_Ruiz_Polanco_0001.jpg",
+      "image_b": "images/006/Jon_Constance_0001.jpg",
+      "score": -0.04885951802134514
+    },
+    {
+      "pair_id": 433,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/003/Doug_Wilson_0001.jpg",
+      "image_b": "images/011/Szu_Yu_Chen_0001.jpg",
+      "score": -0.00575118325650692
+    },
+    {
+      "pair_id": 5238,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/003/Eduardo_Romero_0001.jpg",
+      "image_b": "images/010/Robert_Kocharian_0005.jpg",
+      "score": -0.025964252650737762
+    },
+    {
+      "pair_id": 847,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/011/Silvio_Berlusconi_0008.jpg",
+      "image_b": "images/011/Silvio_Berlusconi_0023.jpg",
+      "score": 0.7043501138687134
+    },
+    {
+      "pair_id": 3448,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/003/Emyr_Jones_Parry_0001.jpg",
+      "image_b": "images/011/Sally_Clark_0001.jpg",
+      "score": 0.06665031611919403
+    },
+    {
+      "pair_id": 4175,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/010/Phil_Morris_0001.jpg",
+      "image_b": "images/010/Priscilla_Owen_0002.jpg",
+      "score": 0.03990622237324715
+    },
+    {
+      "pair_id": 1955,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/007/Kifah_Ajouri_0001.jpg",
+      "image_b": "images/007/Kifah_Ajouri_0002.jpg",
+      "score": 0.8303263187408447
+    },
+    {
+      "pair_id": 3109,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/005/Hans_Blix_0026.jpg",
+      "image_b": "images/005/Hans_Blix_0036.jpg",
+      "score": 0.529058575630188
+    },
+    {
+      "pair_id": 3839,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/010/Robert_Mugabe_0001.jpg",
+      "image_b": "images/010/Robert_Mugabe_0002.jpg",
+      "score": 0.7851448655128479
+    },
+    {
+      "pair_id": 1107,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/005/Javier_Vargas_0001.jpg",
+      "image_b": "images/006/Jesse_Helms_0001.jpg",
+      "score": 0.06098375469446182
+    },
+    {
+      "pair_id": 2587,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/008/Mark_Heller_0001.jpg",
+      "image_b": "images/008/Mark_Heller_0002.jpg",
+      "score": 0.6827749013900757
+    },
+    {
+      "pair_id": 823,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/010/Rick_Barnes_0001.jpg",
+      "image_b": "images/010/Rick_Barnes_0003.jpg",
+      "score": 0.7840531468391418
+    },
+    {
+      "pair_id": 835,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/011/Salma_Hayek_0001.jpg",
+      "image_b": "images/011/Salma_Hayek_0010.jpg",
+      "score": 0.6732332706451416
+    },
+    {
+      "pair_id": 3714,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/006/Joan_Claybrook_0001.jpg",
+      "image_b": "images/006/Joan_Claybrook_0002.jpg",
+      "score": 0.7311834096908569
+    },
+    {
+      "pair_id": 336,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/000/Antonio_Cassano_0001.jpg",
+      "image_b": "images/009/Paul_Celluci_0001.jpg",
+      "score": -0.08044927567243576
+    },
+    {
+      "pair_id": 1254,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/003/Doris_Schroeder_0001.jpg",
+      "image_b": "images/003/Doris_Schroeder_0003.jpg",
+      "score": 0.5909410715103149
+    },
+    {
+      "pair_id": 5054,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/011/Rudolph_Giuliani_0001.jpg",
+      "image_b": "images/011/Rudolph_Giuliani_0020.jpg",
+      "score": 0.6882622241973877
+    },
+    {
+      "pair_id": 1344,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/007/Keanu_Reeves_0007.jpg",
+      "image_b": "images/007/Keanu_Reeves_0012.jpg",
+      "score": 0.42266127467155457
+    },
+    {
+      "pair_id": 2870,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/004/Gerry_Adams_0008.jpg",
+      "image_b": "images/005/Jamir_Miller_0001.jpg",
+      "score": 0.03864644095301628
+    },
+    {
+      "pair_id": 1591,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/001/Chris_Cirino_0001.jpg",
+      "image_b": "images/006/Jen_Bice_0001.jpg",
+      "score": 0.032095350325107574
+    },
+    {
+      "pair_id": 3039,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/002/Claudia_Schiffer_0001.jpg",
+      "image_b": "images/002/Claudia_Schiffer_0002.jpg",
+      "score": 0.7531542778015137
+    },
+    {
+      "pair_id": 514,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/006/Jennifer_Renee_Short_0001.jpg",
+      "image_b": "images/011/Taylor_Twellman_0001.jpg",
+      "score": -0.024916179478168488
+    },
+    {
+      "pair_id": 3791,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/009/Michael_Schumacher_0002.jpg",
+      "image_b": "images/009/Michael_Schumacher_0017.jpg",
+      "score": 0.46309053897857666
+    },
+    {
+      "pair_id": 2135,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/000/Antonio_Palocci_0006.jpg",
+      "image_b": "images/006/John_Geoghan_0001.jpg",
+      "score": 0.015767181292176247
+    },
+    {
+      "pair_id": 1992,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/009/Muhammad_Ali_0002.jpg",
+      "image_b": "images/009/Muhammad_Ali_0005.jpg",
+      "score": 0.718095064163208
+    },
+    {
+      "pair_id": 1968,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/008/Madonna_0002.jpg",
+      "image_b": "images/008/Madonna_0003.jpg",
+      "score": 0.6111150979995728
+    },
+    {
+      "pair_id": 3455,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/003/Flavia_Delaroli_0002.jpg",
+      "image_b": "images/006/John_Warner_0004.jpg",
+      "score": 0.054260965436697006
+    },
+    {
+      "pair_id": 253,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/011/Stockard_Channing_0002.jpg",
+      "image_b": "images/011/Stockard_Channing_0003.jpg",
+      "score": 0.5835694074630737
+    },
+    {
+      "pair_id": 4298,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/005/Jean-Claude_Braquet_0001.jpg",
+      "image_b": "images/005/Jean-Claude_Braquet_0002.jpg",
+      "score": 0.7431588768959045
+    },
+    {
+      "pair_id": 588,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/010/Robert_Evans_0001.jpg",
+      "image_b": "images/012/Todd_Robbins_0001.jpg",
+      "score": -0.007798986509442329
+    },
+    {
+      "pair_id": 2803,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/001/Charles_Bell_0001.jpg",
+      "image_b": "images/011/Tatjana_Gsell_0001.jpg",
+      "score": 0.057696856558322906
+    },
+    {
+      "pair_id": 1093,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/005/Ivan_Helguera_0001.jpg",
+      "image_b": "images/012/William_Donaldson_0004.jpg",
+      "score": 0.08363944292068481
+    },
+    {
+      "pair_id": 824,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/010/Rick_Dinse_0001.jpg",
+      "image_b": "images/010/Rick_Dinse_0003.jpg",
+      "score": 0.7978106737136841
+    },
+    {
+      "pair_id": 2094,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/013/Yasser_Arafat_0003.jpg",
+      "image_b": "images/013/Yasser_Arafat_0008.jpg",
+      "score": 0.8351713418960571
+    },
+    {
+      "pair_id": 5948,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/008/Luis_Guzman_0001.jpg",
+      "image_b": "images/009/Patsy_Kensit_0001.jpg",
+      "score": -0.04119125008583069
+    },
+    {
+      "pair_id": 523,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/006/Jodie_Foster_0003.jpg",
+      "image_b": "images/006/Joe_Pantoliano_0001.jpg",
+      "score": -0.08937998861074448
+    },
+    {
+      "pair_id": 4150,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/008/Mark_Dacey_0001.jpg",
+      "image_b": "images/012/Turner_Stevenson_0001.jpg",
+      "score": 0.172100231051445
+    },
+    {
+      "pair_id": 5011,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/009/Nathalie_Baye_0001.jpg",
+      "image_b": "images/009/Nathalie_Baye_0004.jpg",
+      "score": 0.5587863922119141
+    },
+    {
+      "pair_id": 4848,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/001/Carlo_Ancelotti_0002.jpg",
+      "image_b": "images/001/Carlo_Ancelotti_0003.jpg",
+      "score": 0.7038585543632507
+    },
+    {
+      "pair_id": 2741,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/000/Ari_Fleischer_0009.jpg",
+      "image_b": "images/005/Jean-Marc_de_La_Sabliere_0002.jpg",
+      "score": -0.11522988975048065
+    },
+    {
+      "pair_id": 207,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/009/Patty_Schnyder_0002.jpg",
+      "image_b": "images/009/Patty_Schnyder_0003.jpg",
+      "score": 0.5649705529212952
+    },
+    {
+      "pair_id": 103,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/005/Jacques_Rogge_0004.jpg",
+      "image_b": "images/005/Jacques_Rogge_0006.jpg",
+      "score": 0.7223867774009705
+    },
+    {
+      "pair_id": 1144,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/007/Leon_Barmore_0001.jpg",
+      "image_b": "images/013/Yusaku_Miyazato_0001.jpg",
+      "score": 0.01800437644124031
+    },
+    {
+      "pair_id": 4752,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/008/Mauro_Viza_0001.jpg",
+      "image_b": "images/012/William_Jackson_0001.jpg",
+      "score": 0.0210818350315094
+    },
+    {
+      "pair_id": 3267,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/011/Sharon_Stone_0001.jpg",
+      "image_b": "images/011/Sharon_Stone_0002.jpg",
+      "score": 0.4729940891265869
+    },
+    {
+      "pair_id": 5058,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/011/Rudolph_Giuliani_0015.jpg",
+      "image_b": "images/011/Rudolph_Giuliani_0020.jpg",
+      "score": 0.6640558242797852
+    },
+    {
+      "pair_id": 4910,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/004/Goldie_Hawn_0003.jpg",
+      "image_b": "images/004/Goldie_Hawn_0007.jpg",
+      "score": 0.7370025515556335
+    },
+    {
+      "pair_id": 2480,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/002/David_Hyde_Pierce_0002.jpg",
+      "image_b": "images/002/David_Hyde_Pierce_0003.jpg",
+      "score": 0.7554066181182861
+    },
+    {
+      "pair_id": 2458,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/001/Carlos_Menem_0016.jpg",
+      "image_b": "images/001/Carlos_Menem_0018.jpg",
+      "score": 0.7541569471359253
+    },
+    {
+      "pair_id": 2245,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/003/Edward_Lohn_0001.jpg",
+      "image_b": "images/009/Nino_DAngelo_0001.jpg",
+      "score": -0.005199780687689781
+    },
+    {
+      "pair_id": 4227,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/001/Carol_Moseley_Braun_0001.jpg",
+      "image_b": "images/001/Carol_Moseley_Braun_0002.jpg",
+      "score": 0.5732274055480957
+    },
+    {
+      "pair_id": 1422,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/009/Oscar_De_La_Hoya_0001.jpg",
+      "image_b": "images/009/Oscar_De_La_Hoya_0003.jpg",
+      "score": 0.6519427299499512
+    },
+    {
+      "pair_id": 552,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/007/Leticia_Dolera_0001.jpg",
+      "image_b": "images/012/Tom_Glavine_0001.jpg",
+      "score": -0.02089122124016285
+    },
+    {
+      "pair_id": 5794,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/002/Christian_Wulff_0002.jpg",
+      "image_b": "images/007/Kjell_Magne_Bondevik_0003.jpg",
+      "score": 0.029582219198346138
+    },
+    {
+      "pair_id": 430,
+      "fold_id": 1,
+      "is_same": 0,
+      "image_a": "images/003/Dora_Bakoyianni_0001.jpg",
+      "image_b": "images/010/Richard_Sambrook_0002.jpg",
+      "score": -0.0393875315785408
+    },
+    {
+      "pair_id": 3425,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/002/Dinah_Turner_0001.jpg",
+      "image_b": "images/008/Mekhi_Phifer_0001.jpg",
+      "score": 0.15041229128837585
+    },
+    {
+      "pair_id": 2289,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/005/Hermando_Harton_0001.jpg",
+      "image_b": "images/009/Paris_Hilton_0002.jpg",
+      "score": 0.09935776889324188
+    },
+    {
+      "pair_id": 4474,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/011/Steve_Nash_0002.jpg",
+      "image_b": "images/011/Steve_Nash_0004.jpg",
+      "score": 0.6413276195526123
+    },
+    {
+      "pair_id": 2330,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/006/John_Travolta_0002.jpg",
+      "image_b": "images/007/Lech_Walesa_0001.jpg",
+      "score": -0.09940474480390549
+    },
+    {
+      "pair_id": 1317,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/006/Jiri_Novak_0005.jpg",
+      "image_b": "images/006/Jiri_Novak_0006.jpg",
+      "score": 0.8733710050582886
+    },
+    {
+      "pair_id": 3119,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/005/Hosni_Mubarak_0006.jpg",
+      "image_b": "images/005/Hosni_Mubarak_0007.jpg",
+      "score": 0.6391739845275879
+    },
+    {
+      "pair_id": 3095,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/004/Gilberto_Rodriguez_Orejuela_0002.jpg",
+      "image_b": "images/004/Gilberto_Rodriguez_Orejuela_0003.jpg",
+      "score": 0.841729462146759
+    },
+    {
+      "pair_id": 3823,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/010/Ralph_Lauren_0001.jpg",
+      "image_b": "images/010/Ralph_Lauren_0002.jpg",
+      "score": 0.7824577689170837
+    },
+    {
+      "pair_id": 230,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/010/Rick_Perry_0001.jpg",
+      "image_b": "images/010/Rick_Perry_0005.jpg",
+      "score": 0.6686939001083374
+    },
+    {
+      "pair_id": 1161,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/008/Mark_Sisk_0001.jpg",
+      "image_b": "images/008/Mehdi_Baala_0001.jpg",
+      "score": -0.011947289109230042
+    },
+    {
+      "pair_id": 1076,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/005/Hans_Leistritz_0001.jpg",
+      "image_b": "images/011/Sue_Grafton_0001.jpg",
+      "score": -0.019768506288528442
+    },
+    {
+      "pair_id": 5770,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/001/Bill_OReilly_0001.jpg",
+      "image_b": "images/006/Jim_Wessling_0001.jpg",
+      "score": -0.0693846270442009
+    },
+    {
+      "pair_id": 2158,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/001/Bob_Dole_0003.jpg",
+      "image_b": "images/005/Hugh_Carey_0001.jpg",
+      "score": -0.01641390472650528
+    },
+    {
+      "pair_id": 4401,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/009/Minnie_Driver_0001.jpg",
+      "image_b": "images/009/Minnie_Driver_0002.jpg",
+      "score": 0.608557403087616
+    },
+    {
+      "pair_id": 3168,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/007/LK_Advani_0001.jpg",
+      "image_b": "images/007/LK_Advani_0003.jpg",
+      "score": 0.6059857606887817
+    },
+    {
+      "pair_id": 1427,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/009/Paul_McCartney_0003.jpg",
+      "image_b": "images/009/Paul_McCartney_0004.jpg",
+      "score": 0.6686340570449829
+    },
+    {
+      "pair_id": 5378,
+      "fold_id": 9,
+      "is_same": 0,
+      "image_a": "images/009/Mohamed_Hammam_0001.jpg",
+      "image_b": "images/010/Roger_Moore_0004.jpg",
+      "score": -0.031427592039108276
+    },
+    {
+      "pair_id": 233,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/010/Robert_Bonner_0002.jpg",
+      "image_b": "images/010/Robert_Bonner_0003.jpg",
+      "score": 0.7077274918556213
+    },
+    {
+      "pair_id": 1279,
+      "fold_id": 3,
+      "is_same": 1,
+      "image_a": "images/004/Glafcos_Clerides_0001.jpg",
+      "image_b": "images/004/Glafcos_Clerides_0002.jpg",
+      "score": 0.7727484703063965
+    },
+    {
+      "pair_id": 4155,
+      "fold_id": 7,
+      "is_same": 0,
+      "image_a": "images/008/Markus_Naslund_0001.jpg",
+      "image_b": "images/010/Robert_Wagner_0001.jpg",
+      "score": 0.00445114029571414
+    },
+    {
+      "pair_id": 5821,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/002/David_Oh_0001.jpg",
+      "image_b": "images/002/Desiree_McKenzie_0001.jpg",
+      "score": -0.03509523719549179
+    },
+    {
+      "pair_id": 5785,
+      "fold_id": 10,
+      "is_same": 0,
+      "image_a": "images/001/Carlos_Quintanilla_Schmidt_0002.jpg",
+      "image_b": "images/002/Chris_Thomas_0001.jpg",
+      "score": 0.0847792774438858
+    },
+    {
+      "pair_id": 5641,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/009/Oprah_Winfrey_0001.jpg",
+      "image_b": "images/009/Oprah_Winfrey_0002.jpg",
+      "score": 0.46622371673583984
+    },
+    {
+      "pair_id": 5542,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/006/Jesse_Jackson_0007.jpg",
+      "image_b": "images/006/Jesse_Jackson_0008.jpg",
+      "score": 0.7478364706039429
+    },
+    {
+      "pair_id": 2121,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/000/Allan_Houston_0001.jpg",
+      "image_b": "images/005/Heidi_Klum_0001.jpg",
+      "score": 0.05735448747873306
+    },
+    {
+      "pair_id": 4838,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/001/Billy_Sollie_0001.jpg",
+      "image_b": "images/001/Billy_Sollie_0002.jpg",
+      "score": 0.8188315629959106
+    },
+    {
+      "pair_id": 1576,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/001/Cari_Davis_0001.jpg",
+      "image_b": "images/008/Mark_Broxmeyer_0001.jpg",
+      "score": -0.04668448865413666
+    },
+    {
+      "pair_id": 4737,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/007/Kyle_McLaren_0001.jpg",
+      "image_b": "images/011/Sofia_Milos_0001.jpg",
+      "score": -0.014973301440477371
+    },
+    {
+      "pair_id": 1689,
+      "fold_id": 3,
+      "is_same": 0,
+      "image_a": "images/005/Hugh_Campbell_0001.jpg",
+      "image_b": "images/012/Tom_Foy_0001.jpg",
+      "score": 0.003822997212409973
+    },
+    {
+      "pair_id": 1906,
+      "fold_id": 4,
+      "is_same": 1,
+      "image_a": "images/005/James_Gandolfini_0001.jpg",
+      "image_b": "images/005/James_Gandolfini_0003.jpg",
+      "score": 0.5947035551071167
+    },
+    {
+      "pair_id": 1191,
+      "fold_id": 2,
+      "is_same": 0,
+      "image_a": "images/010/Rodolfo_Abalos_0001.jpg",
+      "image_b": "images/012/Thierry_Falise_0003.jpg",
+      "score": 0.02557341754436493
+    },
+    {
+      "pair_id": 673,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/002/David_Beckham_0013.jpg",
+      "image_b": "images/002/David_Beckham_0029.jpg",
+      "score": 0.5576721429824829
+    },
+    {
+      "pair_id": 82,
+      "fold_id": 1,
+      "is_same": 1,
+      "image_a": "images/004/Grant_Hackett_0001.jpg",
+      "image_b": "images/004/Grant_Hackett_0002.jpg",
+      "score": 0.80058354139328
+    },
+    {
+      "pair_id": 2335,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/007/Kaisser_Bazan_0001.jpg",
+      "image_b": "images/010/Pierre_Lacroix_0001.jpg",
+      "score": 0.04890742897987366
+    },
+    {
+      "pair_id": 5654,
+      "fold_id": 10,
+      "is_same": 1,
+      "image_a": "images/010/Pierce_Brosnan_0003.jpg",
+      "image_b": "images/010/Pierce_Brosnan_0007.jpg",
+      "score": 0.6447378993034363
+    },
+    {
+      "pair_id": 2699,
+      "fold_id": 5,
+      "is_same": 1,
+      "image_a": "images/013/Zhang_Ziyi_0002.jpg",
+      "image_b": "images/013/Zhang_Ziyi_0003.jpg",
+      "score": 0.6972528696060181
+    },
+    {
+      "pair_id": 2853,
+      "fold_id": 5,
+      "is_same": 0,
+      "image_a": "images/003/Emmanuel_Milingo_0001.jpg",
+      "image_b": "images/003/Enrica_Fico_0001.jpg",
+      "score": 0.010495312511920929
+    },
+    {
+      "pair_id": 2300,
+      "fold_id": 4,
+      "is_same": 0,
+      "image_a": "images/005/Ira_Einhorn_0001.jpg",
+      "image_b": "images/006/John_Ruiz_0002.jpg",
+      "score": -0.015079333446919918
+    },
+    {
+      "pair_id": 3740,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/007/Juan_Carlos_Ferrero_0009.jpg",
+      "image_b": "images/007/Juan_Carlos_Ferrero_0017.jpg",
+      "score": 0.6896557807922363
+    },
+    {
+      "pair_id": 4658,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/004/Giulio_Andreotti_0001.jpg",
+      "image_b": "images/008/Michael_Denzel_0001.jpg",
+      "score": 0.09090104699134827
+    },
+    {
+      "pair_id": 3643,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/002/Clara_Harris_0002.jpg",
+      "image_b": "images/002/Clara_Harris_0004.jpg",
+      "score": 0.7216814756393433
+    },
+    {
+      "pair_id": 3616,
+      "fold_id": 7,
+      "is_same": 1,
+      "image_a": "images/000/Angelina_Jolie_0011.jpg",
+      "image_b": "images/000/Angelina_Jolie_0020.jpg",
+      "score": 0.5609489679336548
+    },
+    {
+      "pair_id": 3079,
+      "fold_id": 6,
+      "is_same": 1,
+      "image_a": "images/003/Emma_Watson_0003.jpg",
+      "image_b": "images/003/Emma_Watson_0004.jpg",
+      "score": 0.6752091646194458
+    },
+    {
+      "pair_id": 4543,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/001/Ben_Wallace_0001.jpg",
+      "image_b": "images/009/Nia_Vardalos_0005.jpg",
+      "score": -0.08682273328304291
+    },
+    {
+      "pair_id": 5022,
+      "fold_id": 9,
+      "is_same": 1,
+      "image_a": "images/009/Patrick_Roy_0001.jpg",
+      "image_b": "images/009/Patrick_Roy_0002.jpg",
+      "score": 0.5048373341560364
+    },
+    {
+      "pair_id": 3576,
+      "fold_id": 6,
+      "is_same": 0,
+      "image_a": "images/009/Oswald_Gruebel_0001.jpg",
+      "image_b": "images/010/Richard_Penniman_0001.jpg",
+      "score": -0.04806865006685257
+    },
+    {
+      "pair_id": 4568,
+      "fold_id": 8,
+      "is_same": 0,
+      "image_a": "images/001/Brandon_Lloyd_0001.jpg",
+      "image_b": "images/001/Cha_Yung-gu_0001.jpg",
+      "score": -0.021565428003668785
+    },
+    {
+      "pair_id": 813,
+      "fold_id": 2,
+      "is_same": 1,
+      "image_a": "images/010/Peter_Bacanovic_0001.jpg",
+      "image_b": "images/010/Peter_Bacanovic_0002.jpg",
+      "score": 0.751602053642273
+    },
+    {
+      "pair_id": 4427,
+      "fold_id": 8,
+      "is_same": 1,
+      "image_a": "images/010/Pedro_Malan_0003.jpg",
+      "image_b": "images/010/Pedro_Malan_0005.jpg",
+      "score": 0.5245507955551147
+    }
+  ]
+}

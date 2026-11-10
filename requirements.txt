@@ -14,3 +14,4 @@ python-multipart
 jinja2
 requests
 Pillow
+gdown>=6.1.0,<7
