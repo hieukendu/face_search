@@ -94,6 +94,7 @@ def build_index(
                     face["embedding"],
                     str(path),
                     face["bbox"],
+                    face.get("score", 1.0),
                 )
                 faces_indexed += 1
         except Exception as exc:

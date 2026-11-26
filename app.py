@@ -14,7 +14,7 @@ from urllib.parse import quote
 
 import cv2
 import numpy as np
-from fastapi import FastAPI, HTTPException, UploadFile
+from fastapi import FastAPI, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -92,6 +92,8 @@ def _load_runtime():
             store,
             similarity_threshold=float(config.get("similarity_threshold", 0.5)),
             top_k=int(config.get("top_k", 100)),
+            raw_similarity_threshold=config.get("raw_similarity_threshold"),
+            confidence_alpha=float(config.get("confidence_alpha", 0.0)),
         )
         _runtime = {"encoder": encoder, "store": store, "engine": engine}
         return _runtime
@@ -279,7 +281,7 @@ def home():
    <form id="search-form"><div class="file-row">
     <label class="file-control" for="query-file"><svg class="icon" aria-hidden="true"><use href="#icon-person"></use></svg><span class="file-copy"><span class="file-name" id="query-file-name">Chọn ảnh selfie của bạn</span><span class="file-hint">JPG, JPEG, PNG · Một ảnh rõ mặt</span></span><input class="file-input" id="query-file" type="file" name="file" accept="image/jpeg,image/png" required aria-label="Chọn ảnh selfie để tìm ảnh của bạn"></label>
     <button class="primary-button" id="search-button" type="submit"><svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg><span>Tìm ảnh</span></button>
-   </div></form>
+   </div><label class="card-note"><input type="checkbox" name="is_face_crop" value="true">Ảnh đã cắt sát một khuôn mặt</label></form>
    <p class="card-note"><svg class="icon" aria-hidden="true"><use href="#icon-info"></use></svg>Selfie chỉ dùng để tìm kiếm, không được thêm vào album.</p>
   </section>
  </div>
@@ -534,6 +536,7 @@ def _import_drive_photos():
                         face["embedding"],
                         str(destination.relative_to(PROJECT_ROOT)),
                         face["bbox"],
+                        face.get("score", 1.0),
                     )
                     report["faces_indexed"] += 1
                 if not faces:
@@ -551,7 +554,7 @@ def _import_drive_photos():
 
 
 @app.post("/search")
-def search_photo(file: UploadFile):
+def search_photo(file: UploadFile, is_face_crop: bool = Form(False)):
     """
     User upload selfie query.
 
@@ -574,7 +577,7 @@ def search_photo(file: UploadFile):
         raise HTTPException(status_code=503, detail=str(exc)) from exc
     try:
         with _runtime_lock:
-            results = runtime["engine"].search(image)
+            results = runtime["engine"].search(image, is_face_crop=is_face_crop)
     except ValueError as exc:
         raise HTTPException(
             status_code=400,

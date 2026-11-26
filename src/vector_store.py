@@ -63,8 +63,10 @@ class VectorStore:
                 raise ValueError("metadata item must contain photo_path")
             photo_path = item["photo_path"]
             bbox = item.get("bbox")
+            detector_score = item.get("detector_score", 1.0)
         elif isinstance(item, (tuple, list)) and len(item) >= 2:
             photo_path, bbox = item[0], item[1]
+            detector_score = item[2] if len(item) >= 3 else 1.0
         else:
             raise ValueError("metadata items must be dicts or (photo_path, bbox) pairs")
         if photo_path is None:
@@ -75,13 +77,21 @@ class VectorStore:
             normalized_bbox = [float(value) for value in bbox]
             if len(normalized_bbox) != 4:
                 raise ValueError("bbox must contain four coordinates")
-        return {"photo_path": str(photo_path), "bbox": normalized_bbox}
+        detector_score = float(detector_score)
+        if not np.isfinite(detector_score) or not 0.0 < detector_score <= 1.0:
+            raise ValueError("detector_score must be finite and in (0, 1]")
+        return {
+            "photo_path": str(photo_path),
+            "bbox": normalized_bbox,
+            "detector_score": detector_score,
+        }
 
     def add_face(
         self,
         embedding: np.ndarray,
         photo_path: str,
-        bbox
+        bbox,
+        detector_score: float = 1.0,
     ):
         """
         Add một embedding vào FAISS.
@@ -101,7 +111,11 @@ class VectorStore:
         normalized = self._normalize_embeddings(embedding)
         if normalized.shape[0] != 1:
             raise ValueError("add_face expects one embedding vector")
-        metadata_item = self._metadata_item({"photo_path": photo_path, "bbox": bbox})
+        metadata_item = self._metadata_item({
+            "photo_path": photo_path,
+            "bbox": bbox,
+            "detector_score": detector_score,
+        })
         vector_id = int(self.index.ntotal)
         self.index.add(normalized)
         self.metadata[vector_id] = metadata_item
@@ -216,6 +230,7 @@ class VectorStore:
                     "score": float(score),
                     "photo_path": item["photo_path"],
                     "bbox": item.get("bbox"),
+                    "detector_score": float(item.get("detector_score", 1.0)),
                 }
             )
         return results

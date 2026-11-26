@@ -79,6 +79,7 @@ def main():
     """
     parser = argparse.ArgumentParser(description="Search event photos with a selfie")
     parser.add_argument("--query")
+    parser.add_argument("--face-crop", action="store_true", help="Query is already cropped to one face")
     parser.add_argument("--query-folder", default="data/queries/smoke_queries")
     parser.add_argument("--detector-path", default="models/scrfd_10g.onnx")
     parser.add_argument("--embedder-path", default="models/arcface_w600k_r50.onnx")
@@ -104,6 +105,8 @@ def main():
         store,
         similarity_threshold=float(config.get("similarity_threshold", 0.5)),
         top_k=int(args.top_k if args.top_k is not None else config.get("top_k", 100)),
+        raw_similarity_threshold=config.get("raw_similarity_threshold"),
+        confidence_alpha=float(config.get("confidence_alpha", 0.0)),
     )
 
     query_paths = _query_paths(args.query, args.query_folder)
@@ -115,7 +118,7 @@ def main():
         print(f"query: {query_path}")
         started = time.perf_counter()
         try:
-            results = engine.search(load_query_image(query_path))
+            results = engine.search(load_query_image(query_path), is_face_crop=args.face_crop)
         except (ValueError, RuntimeError) as exc:
             print(f"query error: {exc}")
             print(f"query time seconds: {time.perf_counter() - started:.3f}")

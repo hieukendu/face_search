@@ -35,6 +35,9 @@ class FaceEncoder:
         det_size=(640, 640),
         det_threshold=0.5,
         min_face_size=20,
+        *,
+        intra_op_num_threads=None,
+        providers=None,
     ):
         """
         Load:
@@ -67,18 +70,26 @@ class FaceEncoder:
         if self.min_face_size < 0:
             raise ValueError("min_face_size must be non-negative")
 
-        available = set(ort.get_available_providers())
-        if "CUDAExecutionProvider" in available:
-            providers = ["CUDAExecutionProvider", "CPUExecutionProvider"]
-        else:
-            providers = ["CPUExecutionProvider"]
+        if providers is None:
+            available = set(ort.get_available_providers())
+            if "CUDAExecutionProvider" in available:
+                providers = ["CUDAExecutionProvider", "CPUExecutionProvider"]
+            else:
+                providers = ["CPUExecutionProvider"]
+        session_kwargs = {"providers": providers}
+        if intra_op_num_threads is not None:
+            if int(intra_op_num_threads) < 1:
+                raise ValueError("intra_op_num_threads must be positive")
+            options = ort.SessionOptions()
+            options.intra_op_num_threads = int(intra_op_num_threads)
+            session_kwargs["sess_options"] = options
 
         try:
             self.detector_session = ort.InferenceSession(
-                str(detector_file), providers=providers
+                str(detector_file), **session_kwargs
             )
             self.embedder_session = ort.InferenceSession(
-                str(embedder_file), providers=providers
+                str(embedder_file), **session_kwargs
             )
         except Exception as exc:  # expose a useful model-load error
             raise RuntimeError(f"Unable to load ONNX models: {exc}") from exc
@@ -457,6 +468,20 @@ class FaceEncoder:
 
         SCRFD làm bước này.
         """
+        boxes, scores, landmarks = self.detect_candidates(image)
+        keep = self.select_candidate_indices(boxes, scores, landmarks)
+        return [
+            {"bbox": [float(value) for value in boxes[index]],
+             "score": float(scores[index]),
+             "landmarks": np.asarray(landmarks[index], dtype=np.float32).reshape(5, 2)}
+            for index in keep
+        ]
+
+    def detect_candidates(self, image: np.ndarray):
+        """Return mapped/clipped detections before score/size filtering and NMS.
+
+        Offline experiments may cache this output and replay selection exactly.
+        """
         image = self._as_bgr_image(image)
         blob = self._preprocess_detector(image)
         input_height, input_width = int(blob.shape[2]), int(blob.shape[3])
@@ -490,6 +515,12 @@ class FaceEncoder:
         landmarks[:, :, 0] = np.clip(landmarks[:, :, 0], 0, width - 1)
         landmarks[:, :, 1] = np.clip(landmarks[:, :, 1], 0, height - 1)
 
+        return boxes, scores, landmarks
+
+    def select_candidate_indices(self, boxes, scores, landmarks, *, min_face_size=None):
+        """Filter confidence/size then NMS; retry size=0 only when no face survives."""
+        minimum = self.min_face_size if min_face_size is None else min_face_size
+
         valid = []
         for index, (box, score, points) in enumerate(zip(boxes, scores, landmarks)):
             x1, y1, x2, y2 = [float(value) for value in box]
@@ -499,29 +530,22 @@ class FaceEncoder:
                 continue
             if x2 <= x1 or y2 <= y1:
                 continue
-            if min(x2 - x1, y2 - y1) < self.min_face_size:
+            if min(x2 - x1, y2 - y1) < minimum:
                 continue
             if points.shape != (5, 2):
                 raise RuntimeError("SCRFD landmarks must have shape (5, 2)")
             valid.append(index)
 
         if not valid:
+            if minimum > 0:
+                return self.select_candidate_indices(boxes, scores, landmarks, min_face_size=0)
             return []
         valid_boxes = boxes[valid]
         valid_scores = scores[valid]
         keep_relative = self._nms(valid_boxes, valid_scores)
         keep = [valid[index] for index in keep_relative]
         keep.sort(key=lambda index: float(scores[index]), reverse=True)
-        faces = []
-        for index in keep:
-            faces.append(
-                {
-                    "bbox": [float(value) for value in boxes[index]],
-                    "score": float(scores[index]),
-                    "landmarks": np.asarray(landmarks[index], dtype=np.float32).reshape(5, 2),
-                }
-            )
-        return faces
+        return keep
 
     def align_face(
         self,
@@ -666,36 +690,40 @@ class FaceEncoder:
 
     def encode_query(
         self,
-        image: np.ndarray
+        image: np.ndarray,
+        *,
+        is_face_crop: bool = False,
     ) -> np.ndarray:
+        """Return N×512 embeddings: a declared face crop, or every detected face.
+
+        Crop mode assumes a single tightly cropped face (preferably aligned).
+        Full images use SCRFD landmarks for alignment through encode_image().
         """
-        Dùng cho selfie query.
+        embeddings, _scores = self.encode_query_with_scores(
+            image,
+            is_face_crop=is_face_crop,
+        )
+        return embeddings
 
-        Pipeline:
-            selfie
-            -> detect face
-            -> chọn face chính
-            -> align
-            -> embedding
+    def encode_query_with_scores(
+        self,
+        image: np.ndarray,
+        *,
+        is_face_crop: bool = False,
+    ) -> tuple[np.ndarray, np.ndarray]:
+        """Return query embeddings together with detector confidences.
 
-        Nếu ảnh có nhiều người:
-            ưu tiên face lớn nhất hoặc gần center nhất.
-
-        Output:
-            query embedding 512-D
+        A declared face crop has no detector confidence, so it uses a neutral
+        confidence of 1.0. Full images retain every detected face and its SCRFD
+        score for optional confidence-aware retrieval.
         """
         image = self._as_bgr_image(image)
-        faces = self.detect_faces(image)
+        if is_face_crop:
+            crop = cv2.resize(image, (112, 112), interpolation=cv2.INTER_LINEAR)
+            return self.embed_face(crop)[None, :], np.ones(1, dtype=np.float32)
+        faces = self.encode_image(image)
         if not faces:
             raise ValueError("No face detected in query image")
-
-        def area(face):
-            x1, y1, x2, y2 = face["bbox"]
-            return max(0.0, x2 - x1) * max(0.0, y2 - y1)
-
-        selected = max(faces, key=area)
-        aligned = self.align_face(image, selected["landmarks"])
-        embedding = self.embed_face(aligned)
-        if embedding.shape != (512,):
-            raise RuntimeError("Query embedding must have shape (512,)")
-        return embedding
+        embeddings = np.stack([face["embedding"] for face in faces])
+        scores = np.asarray([float(face.get("score", 1.0)) for face in faces], dtype=np.float32)
+        return embeddings, scores

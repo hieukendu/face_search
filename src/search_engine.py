@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import numpy as np
+
 
 class SearchEngine:
 
@@ -11,6 +13,8 @@ class SearchEngine:
         vector_store,
         similarity_threshold=0.5,
         top_k=100,
+        raw_similarity_threshold=None,
+        confidence_alpha=0.0,
     ):
         """
         Nhận vào:
@@ -23,6 +27,15 @@ class SearchEngine:
         self.encoder = face_encoder
         self.store = vector_store
         self.threshold = float(similarity_threshold)
+        self.raw_threshold = (
+            float(raw_similarity_threshold)
+            if raw_similarity_threshold is not None
+            else self.threshold
+        )
+        self.confidence_alpha = float(confidence_alpha)
+        self.confidence_enabled = raw_similarity_threshold is not None
+        if self.confidence_alpha < 0.0:
+            raise ValueError("confidence_alpha must be non-negative")
         self.top_k = int(top_k)
         if self.top_k < 0:
             raise ValueError("top_k must be non-negative")
@@ -77,7 +90,9 @@ class SearchEngine:
 
     def search(
         self,
-        query_image
+        query_image,
+        *,
+        is_face_crop=False,
     ):
         """
         API chính của search system.
@@ -85,9 +100,10 @@ class SearchEngine:
         Pipeline:
 
             query image
-            -> FaceEncoder.encode_query()
-            -> query embedding
-            -> FAISS range search at the configured threshold
+            -> FaceEncoder.encode_query_with_scores()
+            -> query embeddings for every detected face
+            -> FAISS range search at the raw cosine threshold
+            -> optional detector-confidence conjunction
             -> threshold filter
             -> deduplicate
             -> matching photos
@@ -95,13 +111,47 @@ class SearchEngine:
         Output:
             danh sách ảnh match.
         """
-        query_embedding = self.encoder.encode_query(query_image)
+        encode_with_scores = getattr(self.encoder, "encode_query_with_scores", None)
+        if encode_with_scores is None:
+            query_embeddings = (
+                self.encoder.encode_query(query_image, is_face_crop=True)
+                if is_face_crop else self.encoder.encode_query(query_image)
+            )
+            query_embeddings = np.atleast_2d(query_embeddings)
+            query_scores = np.ones(len(query_embeddings), dtype=np.float32)
+        else:
+            query_embeddings, query_scores = encode_with_scores(
+                query_image,
+                is_face_crop=is_face_crop,
+            )
+            query_embeddings = np.atleast_2d(query_embeddings)
+            query_scores = np.asarray(query_scores, dtype=np.float32).reshape(-1)
+            if len(query_embeddings) != len(query_scores):
+                raise RuntimeError("Query embeddings and detector scores must have equal length")
         # top_k remains a compatibility/display hint, but production
         # completeness is defined by the threshold: do not truncate valid
         # matches before filtering and photo-path deduplication.
-        results = self.store.search(
-            query_embedding,
-            score_threshold=self.threshold,
-        )
+        results = []
+        for embedding, query_score in zip(query_embeddings, query_scores):
+            threshold = self.raw_threshold if self.confidence_enabled else self.threshold
+            candidates = self.store.search(embedding, score_threshold=threshold)
+            if not self.confidence_enabled:
+                results.extend(candidates)
+                continue
+            query_score = float(np.clip(query_score, 1e-6, 1.0))
+            for candidate in candidates:
+                raw_score = float(candidate.get("score", float("-inf")))
+                gallery_score = float(candidate.get("detector_score", 1.0))
+                gallery_score = float(np.clip(gallery_score, 1e-6, 1.0))
+                weighted_score = raw_score * (
+                    query_score * gallery_score
+                ) ** self.confidence_alpha
+                if weighted_score >= self.threshold:
+                    candidate = dict(candidate)
+                    candidate["raw_score"] = raw_score
+                    candidate["weighted_score"] = weighted_score
+                    # Rank and display by the score that admitted the result.
+                    candidate["score"] = weighted_score
+                    results.append(candidate)
         filtered = self.filter_by_threshold(results)
         return self.deduplicate_photos(filtered)
